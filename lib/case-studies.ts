@@ -1,15 +1,13 @@
 /**
- * CASE STUDY CONTENT — NDA-SAFE
+ * CASE STUDY CONTENT
  * ---------------------------------------------------------------------------
- * Every engagement below is under NDA. This file is the single place client
- * content lives, so it can be audited in one pass.
+ * Every engagement below was delivered at Growthmak and is already published
+ * publicly, so clients are named. This file is the single place that content
+ * lives, so it can be audited in one pass.
  *
- * PERMITTED:  industry, niche, market/city, our work, our decisions, metrics.
- * FORBIDDEN:  client company names, trade names, brand names, practitioner or
- *             staff names, domains, URLs, individual location/branch names,
- *             exact keyword lists, third-party vendor names, review platforms.
- *
- * If you add a case study, keep to that rule.
+ * RULE: no figure appears here that is not in the source material for that
+ * engagement. Where an engagement is too early to have performance data, the
+ * case study says so rather than reaching for a number.
  */
 
 export type Metric = { value: string; label: string; note?: string };
@@ -45,605 +43,1130 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   /* ======================================================================
-     01 — AFTERMARKET MOTORCYCLE PARTS · E-COMMERCE · UNITED STATES
+     01 — LIGHTING SOUQ · CUSTOM SHOPIFY · DOHA, QATAR
      ====================================================================== */
   {
-    slug: 'motorcycle-parts-ecommerce',
+    slug: 'lighting-souq',
     index: '001',
+    title: 'The Shopify build',
+    subtitle:
+      'A custom-built storefront for Qatar’s online lighting supermarket — 1,467 products, 40 brands, a dual-axis navigation system and a bespoke trade-quote channel.',
+    industry: 'Lighting & Smart Home',
+    niche: 'Custom Shopify development',
+    market: 'Doha, Qatar',
+    year: '2026',
+    duration: 'Under a week of build time',
+    services: [
+      'Custom Shopify development',
+      'Liquid theme build',
+      'Catalogue engineering',
+      'Information architecture',
+      'E-commerce SEO',
+      'Data migration',
+    ],
+    summary:
+      'Lighting Souq sells lighting to Qatar and to more than forty countries beyond it — from a QAR 10 bulb to a full villa scheme, with its own delivery fleet and a trade business serving contractors and hospitality. I designed and built their storefront on Shopify as a fully custom theme: not a marketplace template with the colours changed, but a purpose-built front end for a technical catalogue with two very different audiences.',
+    cardMetric: { value: '1,467', label: 'Products live at launch' },
+    metrics: [
+      { value: '1,467', label: 'Products live', note: '1,466 in stock at launch' },
+      { value: '40', label: 'Brands', note: 'each with a dedicated page' },
+      { value: '33', label: 'Collections', note: 'across five departments' },
+      { value: '2–3 hrs', label: 'To extract 2,000+ products', note: 'from a platform with no export' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'Three buyers, one catalogue, and no single grid that serves them',
+        body: [
+          'A lighting catalogue is not a fashion catalogue. The same shopper may arrive knowing exactly what they need — a GU10 spotlight, 6W, 2700K, dimmable — or knowing only that their garden is dark. One wants a specification; the other wants a recommendation.',
+          'Meanwhile a contractor is not shopping at all. They have a list of forty line items and want a price against it.',
+          'A single product grid cannot serve all three. Everything in this build — the dual-axis navigation, the shop-by-space routes, the brand pages, the trade quote tool — exists to give each of those three buyers their own path to the same catalogue.',
+        ],
+        pull:
+          'The navigation is the most heavily engineered part of this storefront, because it is where the three-audience problem gets solved.',
+      },
+      {
+        kicker: 'Foundation',
+        title: 'Structure before interface: a five-department model over 1,467 products',
+        body: [
+          'Nothing else in the build works if the catalogue underneath it is not organised. Before a single template was written, the entire product set was restructured into a taxonomy that could drive navigation, filtering, merchandising and search from the same data.',
+          'Every product carries a vendor and a product type. Those two fields do a great deal of work: 40 brands and 29 product types drive the storefront filters, populate the brand pages, and let collections be defined by rule rather than maintained by hand.',
+          'Hand-curated collections rot. Every new product needs adding to every relevant list, and the day someone forgets, the catalogue quietly starts lying. Structuring the data properly means a new SKU appears everywhere it belongs the moment it is created.',
+        ],
+        table: {
+          title: 'The five departments',
+          note: 'Plus Deals and Shop All as standalone routes — 33 collections wired into the navigation in total.',
+          head: ['Department', 'Subcategories', 'Example collections'],
+          rows: [
+            ['Smart Home', '5 + department page', 'Smart Bulbs, LED & RGB Strips, Smart Switches, Sensors'],
+            ['Bulbs & Tubes', '5 + department page', 'LED Bulbs (E27/E14), Specialty, LED Tubes (T8), Grow Lights'],
+            ['Indoor Fixtures', '5 + department page', 'Downlights & Spots, Ceiling Panels, Wall & Pendant'],
+            ['Solar & Outdoor', '5 + department page', 'Solar Lights, Flood & Street, Outdoor Wall, Sensor'],
+            ['Fans & Electrical', '5 + department page', 'Ceiling Fans, Exhaust, Ballasts & Drivers, Switches'],
+          ],
+        },
+      },
+      {
+        kicker: 'Core build',
+        title: 'A dual-axis mega-menu: shop by type, or shop by brand',
+        body: [
+          'Open any of the five departments and the menu presents two parallel routes side by side. Shop by Type lists the five subcategories. Shop by Brand lists the five brands that matter most in that department, plus a link to the full brand index. Both routes lead to the same catalogue by different logic.',
+          'A homeowner replacing a bulb thinks in categories — they want LED bulbs. A trade buyer or a brand-loyal customer thinks in manufacturers — they want Osram, or they want KDK because that is what the specification says. Forcing either to browse the other’s way adds a step, and steps are where carts are lost.',
+        ],
+        points: [
+          {
+            label: 'Faceted filtering',
+            text: 'Availability, price, brand and product type on every collection, with live result counts and a clear-all control — 1,467 products down to a working shortlist in two clicks.',
+          },
+          {
+            label: 'Eight-way sorting',
+            text: 'Featured, most relevant, best selling, alphabetical, price and date in both directions — with the default tuned per collection rather than applied globally.',
+          },
+          {
+            label: 'A third, merchandising panel',
+            text: 'Each department menu carries its own message and call to action — Life in Light, Daily Essentials, Fit-out Ready, Villa & Garden, Trade & Project. The navigation sells as well as directs.',
+          },
+        ],
+      },
+      {
+        kicker: 'Bespoke build',
+        title: 'A B2B channel inside a B2C storefront',
+        body: [
+          'Lighting Souq supplies contractors, hotels, hospitality venues and facilities teams as well as households. Those buyers do not add forty line items to a cart one at a time — they send a list and expect a price. So I built them their own channel.',
+          'A dedicated request drawer lets a trade buyer search the live catalogue, add multiple products with quantities against each, and keep adding lines until the list is complete — then submit it with their name, work email, phone, company website and any notes, or continue the same conversation on WhatsApp.',
+          'No standard Shopify theme ships a multi-product quote builder that reads the live catalogue. It is a bespoke Liquid and JavaScript build, reachable from the main navigation, from a dedicated bulk orders page, and from a closing banner on the homepage.',
+        ],
+        pull:
+          'Without it, every trade order arrives as an unstructured phone call that somebody has to transcribe before it can be quoted. With it, the enquiry arrives structured, itemised and ready to price.',
+      },
+      {
+        kicker: 'The platform choice',
+        title: 'Why Shopify here — and where it would have been the wrong answer',
+        body: [
+          'For a catalogue-heavy international retailer, the case is straightforward: Shopify carries the commerce infrastructure so that engineering time goes into the storefront rather than into rebuilding checkout, hosting and payment compliance from scratch.',
+          'Where it does not win: complex multi-storefront architectures, or businesses with dedicated frontend engineering teams, can outgrow the standard theme model and are better served headless. That was not this business, and building it that way would have added cost and fragility for no return.',
+        ],
+        table: {
+          title: 'Platform capability, and how it was used on this build',
+          head: ['Capability', 'How it was used'],
+          rows: [
+            ['Liquid theme layer', 'Full pixel-level control. The mega-menu, category tiles and trade quote drawer are custom Liquid, not theme settings.'],
+            ['Online Store 2.0 sections', 'A section-based homepage the client can reorder and re-merchandise without a developer.'],
+            ['Native faceted filtering', 'Filtering across 1,467 products served by the platform rather than a paid filter app.'],
+            ['Product taxonomy & vendors', '40 brands and 29 types powering filters, brand pages and collection logic from one source of truth.'],
+            ['Hosted checkout & wallets', 'PCI-compliant checkout with cards, Apple Pay, Google Pay and cash on delivery — maintained by Shopify.'],
+            ['Markets & multi-currency', 'Cross-border infrastructure for a retailer shipping to more than 40 countries.'],
+          ],
+        },
+      },
+      {
+        kicker: 'Delivery',
+        title: 'A documented SOP, not an improvised project',
+        body: [
+          'The speed below comes from the process being solved in advance, not from work being skipped. The sitemap and mockup were produced and presented on the onboarding call, before any money changed hands — so the client saw the real structure and design of the store they were commissioning.',
+          'The previous platform offered no catalogue export of any kind. I wrote a page-script routine that walked its admin and wrote every record out to CSV, meta fields intact. Over 2,000 products were extracted in two to three hours; development began the next day.',
+        ],
+        table: {
+          title: 'Stage by stage',
+          head: ['Stage', 'What happened', 'Time'],
+          rows: [
+            ['Pre-sale', 'Discovery call, then a full sitemap and mockup presented before signature', '—'],
+            ['Catalogue engineering', 'Complete product and customer dataset extracted by custom script, meta intact', '2–3 hours'],
+            ['Development', 'Custom Shopify theme built to the approved mockup, full catalogue loaded', '2–3 days'],
+            ['Content & SEO', 'Product content and every core site page written and optimised', '1 day'],
+            ['Upload & QA', 'Content loaded, checked and published', '2 days'],
+            ['Delivered', 'A live, fully custom storefront carrying a 1,467-product catalogue', 'Under a week'],
+          ],
+        },
+      },
+    ],
+    proves: [
+      {
+        title: 'Custom, not configured',
+        text: 'The dual-axis mega-menu, the multi-line trade quote tool, the category tiles that read live product counts, the shop-by-space routes — none of these ship in a theme. A configured template would have produced a store that works; this one is built around the business.',
+      },
+      {
+        title: 'The data model comes before the design',
+        text: 'Forty brands and twenty-nine product types were structured before a template was written, which is why filtering, brand pages, category counts and collection logic all run off one source of truth.',
+      },
+      {
+        title: 'A documented process is what makes speed safe',
+        text: 'Sitemap and mockup before signature. A build SOP that produces a custom storefront in under a week. That is why a 1,467-product store with a bespoke B2B channel is a week of build time rather than a quarter of drift.',
+      },
+    ],
+    closing:
+      '1,467 products. 40 brands. 33 collections. A dual-axis navigation system, a bespoke trade-quote channel, twelve custom homepage sections and a full content and SEO layer — on a platform the business can merchandise and scale itself.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     02 — HYDROSOX · SHOPIFY LAUNCH · UNITED KINGDOM
+     ====================================================================== */
+  {
+    slug: 'hydrosox',
+    index: '002',
+    title: 'One product, five ways in',
+    subtitle:
+      'A single-SKU waterproof sock brand with no reviews, no orders and no recognition — given twenty-one pages and five reasons to be found. Live in seventeen days.',
+    industry: 'Waterproof Socks',
+    niche: 'Single-SKU D2C e-commerce',
+    market: 'United Kingdom',
+    year: '2026',
+    duration: '17 days, referral call to live store',
+    services: [
+      'Shopify store build',
+      'Positioning & content strategy',
+      'Information architecture',
+      'E-commerce SEO',
+      'Conversion copywriting',
+      'Tracking & ads setup',
+    ],
+    summary:
+      'HydroSox is a UK waterproof sock brand with one product, no reviews, no orders and no recognition. A WordPress site already existed but had never been launched and had never taken a sale. I built the store around the reasons people get wet feet rather than around the company — five use-case routes, each with its own page, so the brand can be found by people who have never heard of it.',
+    cardMetric: { value: '17 days', label: 'Referral call to live store' },
+    metrics: [
+      { value: '17 days', label: 'Referral call to live store', note: 'one week of that was the build' },
+      { value: '21', label: 'Pages built', note: 'behind a single SKU' },
+      { value: '5', label: 'Use-case routes', note: 'one per reason to buy' },
+      { value: '1', label: 'Product', note: 'and no order history to trade on' },
+    ],
+    chapters: [
+      {
+        kicker: 'The brief',
+        title: 'The obvious positioning was also a ceiling',
+        body: [
+          'The obvious move with a product like this is to build the whole brand around its most distinctive buyer — Muslim customers looking for socks that hold up to wudu. That is a real market, and it is also a ceiling.',
+          'Nobody searches for a brand they have not heard of, and a single-SKU store with no history behind it has to be found some other way. A site that exists but has never launched and has never taken a sale is not a starting point; it is a blank page with hosting attached.',
+        ],
+      },
+      {
+        kicker: 'The architecture',
+        title: 'Twenty-one pages behind a single SKU',
+        body: [
+          'The store is built around the reasons people get wet feet rather than around the company. Five use-case routes — hiking and walking, all day in boots, cycling and commuting, running and trail, and wudu and masah — each get their own page.',
+          'So wudu is one door into the brand instead of the whole building, and someone searching for waterproof socks for trekking can arrive without having heard the name. Twenty-one pages sit behind a single SKU for exactly that reason.',
+          'Scholarly verification the client already held was given a standing page rather than a line of copy, because for one of those five audiences it is the entire purchase decision.',
+        ],
+        pull:
+          'Wudu is one door into the brand instead of the whole building.',
+      },
+      {
+        kicker: 'The commercial model',
+        title: 'A pricing ladder that follows cost, not a discount pattern',
+        body: [
+          'Delivery scales with the weight of the parcel, so it is absorbed from two pairs upward and carried on single pairs as a launch position. The ladder is built from what the parcel actually costs to send rather than from a percentage-off convention.',
+          'The candour was deliberate — what the socks will not do, why they are £20 and not £40, and why there are no reviews yet. A brand with no history is better served by saying so than by five stars nobody believes.',
+        ],
+      },
+      {
+        kicker: 'The launch',
+        title: 'A week of build, and the days that were not design',
+        body: [
+          'The build itself took a week. The remaining days went to Merchant Center, payment and shipping setup — which is the part of a launch that is not design, and the part that quietly decides whether a store can actually take money on day one.',
+        ],
+      },
+    ],
+    proves: [
+      {
+        title: 'Positioning is an architecture decision, not a copy decision',
+        text: 'The difference between a wudu sock brand and a waterproof sock brand with a wudu page is five URLs and an information architecture. One of those has a ceiling; the other has five doors.',
+      },
+      {
+        title: 'A single SKU can still carry a content structure',
+        text: 'Twenty-one pages behind one product is not padding. Each route answers a different search, a different objection and a different reason to buy.',
+      },
+      {
+        title: 'Launch is not the same as build',
+        text: 'A week of that seventeen days was design and development. The rest was Merchant Center, payments and shipping — the unglamorous half that determines whether launch day works.',
+      },
+    ],
+    closing:
+      'One product, five ways in, live in seventeen days — with a structure built to be found by people who had never heard the name.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     03 — KINETIC MOTORCYCLES · E-COMMERCE BUILD · HOUSTON, USA
+     ====================================================================== */
+  {
+    slug: 'kinetic-motorcycles',
+    index: '003',
     title: 'From invisible to sales machine',
     subtitle:
-      'A full year of revenue in six months — on the same ad budget the brand started with.',
+      'A hand-coded Liquid store migrated onto Shopify and rebuilt around purchase intent — a business stuck at $50K a month produced $628K.',
     industry: 'Aftermarket Motorcycle Parts',
     niche: 'Direct-to-consumer e-commerce',
-    market: 'United States',
+    market: 'Houston, United States',
     year: '2024—2026',
     duration: '20 months, ongoing',
     services: [
-      'Google Ads',
-      'Meta Ads',
-      'SEO & AEO',
-      'Custom Shopify development',
-      'Retention marketing',
-      'Tracking & data',
+      'E-commerce website development',
+      'Custom Shopify build',
+      'Platform migration',
+      'E-commerce SEO',
+      'Tracking & attribution',
+      'Retention sequences',
     ],
     summary:
-      'A premium parts manufacturer stuck at $50K a month with a cult following and no visibility. We rebuilt the advertising, the organic search presence and the storefront itself — and the business generated a full year of revenue in half the time, without raising ad spend.',
-    cardMetric: { value: '$628K', label: 'Revenue in 20 months' },
+      'A premium aftermarket brand for Harley-Davidson Sportsters had real engineering credentials and an established customer base, and had been stalled around $50,000 a month. Thousands of riders searched for these products daily and saw nothing. Rather than optimising one channel, the whole revenue system was rebuilt — including migrating a hand-coded Liquid store onto Shopify and restructuring product and category pages around the terms people actually search.',
+    cardMetric: { value: '$628K', label: 'Revenue, Nov 2024 – Jul 2026' },
     metrics: [
-      { value: '$628K', label: 'Revenue generated', note: 'across the engagement to date' },
-      { value: '12.15x', label: 'Peak return on ad spend', note: 'paid social' },
+      { value: '$628K', label: 'Revenue generated', note: 'November 2024 – July 2026' },
+      { value: '12.15×', label: 'Peak return on ad spend', note: 'paid social' },
+      { value: '7.56×', label: 'Return on Google', note: 'on comparable overall spend' },
       { value: '6 months', label: 'To match a full year', note: 'of prior revenue' },
-      { value: '$0.53', label: 'Average cost per click', note: 'on competitive terms' },
     ],
     chapters: [
       {
         kicker: 'The situation',
-        title: 'Stuck at $50K a month — and invisible to the people ready to buy',
+        title: 'Strong product, established base, and a storefront nobody could find',
         body: [
-          'The brand builds premium aftermarket components for a major American motorcycle platform, with serious engineering behind every part and an almost cult-like following among riders. Revenue had been flat around $50,000 a month for a long time. The product was not the problem.',
-          'Thousands of riders were searching for exactly what this brand sold every single day, and the brand was invisible to nearly all of them. When we audited the account, three things were quietly holding everything back.',
+          'The engineering was never the problem. The brand had a following and a catalogue riders genuinely wanted, and revenue had been flat around $50,000 a month for a long time.',
+          'The store itself was hand-coded Liquid, and product and category pages carried none of the structure that competitive non-branded search rewards. Almost every sale had to be rented through advertising — the moment spend paused, sales would stop.',
+        ],
+      },
+      {
+        kicker: 'The build',
+        title: 'Migrate the storefront, then restructure what search actually indexes',
+        body: [
+          'The hand-coded Liquid store was migrated onto Shopify for speed, stability and scale, and rebuilt so the catalogue could carry proper structure rather than being maintained page by page.',
+          'Product and category pages were then optimised for the competitive non-branded terms riders type when they do not yet know the brand — the difference between renting every visit and owning a share of them.',
+          'A full tracking and attribution layer was rebuilt underneath all of it, so budget decisions came from measured return rather than platform-reported opinion.',
         ],
         points: [
           {
-            label: 'Scattered advertising',
-            text: 'Budget was spread thin across campaigns, with a large share of spend reaching people who were never going to buy.',
+            label: 'Platform migration',
+            text: 'From a hand-coded Liquid store to Shopify, without losing catalogue structure or search equity.',
           },
           {
-            label: 'A heavy, slow storefront',
-            text: 'The store was not built to handle real traffic or make buying effortless — and four out of five visitors were on phones.',
+            label: 'Category and product architecture',
+            text: 'Pages rebuilt around the non-branded terms with real purchase intent behind them.',
           },
           {
-            label: 'No lasting free traffic',
-            text: 'Almost every sale had to be rented through ads. The moment spend paused, sales would stop.',
+            label: 'Tracking and attribution',
+            text: 'Measurement rebuilt first, so that when one channel returned 12.15× and another returned far less, there was nothing to debate.',
           },
         ],
-        pull: 'We did not just run ads. We rebuilt the entire way this brand makes money online — the advertising, the free traffic, and the storefront itself.',
+        pull:
+          'Budget moved to where return was measured, not where a platform claimed credit — Meta at 12.15× and Google at 7.56×, on comparable overall spend.',
       },
       {
-        kicker: 'The approach',
-        title: 'We rebuilt the whole revenue engine, not one channel',
+        kicker: 'The outcome',
+        title: 'A full year of revenue in half the time',
         body: [
-          'Instead of putting more money through a leaking system, we treated the business as one connected engine. Ads bring the right people in. Organic search keeps them coming for years. A fast, custom-built storefront turns visitors into buyers. Clean data tells us exactly what to scale.',
-          'Every decision came from a number rather than an opinion. We rebuilt the measurement stack first so that every dollar became accountable. When one channel returned 12x and a campaign returned 1.4x, there was nothing to debate — we moved the budget.',
-        ],
-        points: [
-          {
-            label: 'Performance marketing',
-            text: 'Google and paid social rebuilt from the ground up, focused only on purchase-ready intent and only on campaigns that actually made money.',
-          },
-          {
-            label: 'SEO, AEO and GEO',
-            text: 'Product and category pages optimised so the brand ranks at the top of search for free when riders look for specific parts.',
-          },
-          {
-            label: 'Custom store development',
-            text: 'A hand-coded storefront built in Liquid rather than a generic theme, then migrated onto Shopify for speed and scale.',
-          },
-          {
-            label: 'Retention and data',
-            text: 'Email and lifecycle sequences to turn one-time buyers into repeat revenue, on top of a rebuilt tracking layer.',
-          },
-        ],
-      },
-      {
-        kicker: 'Result — part one',
-        title: 'Same budget. Far bigger returns.',
-        body: [
-          'This business was scaled on roughly the same ad budget it started with. We did not win by spending more. We won by cutting the traffic that never converted and pouring budget into the campaigns that were printing returns.',
-          'In plain terms: for roughly every $1 spent on paid social, the brand earned about $12 back. On search, about $7.50 for every $1. That is what happens when the right people land on a store built to sell.',
-        ],
-        table: {
-          title: 'A peak month, broken down',
-          note: 'From a combined ad spend of roughly $7,400, the brand generated $63,793 in a single month across 214 orders — an 8.63x blended return.',
-          head: ['Channel', 'Ad spend', 'Revenue', 'Return'],
-          rows: [
-            ['Search', '$5,663', '$42,808', '7.56x'],
-            ['Paid social', '$1,727', '$20,985', '12.15x'],
-            ['Combined', '$7,390', '$63,793', '8.63x'],
-          ],
-        },
-        pull: 'The 12x return was not luck. The data told us which creatives and catalogue ads were winning — so we doubled down on those and cut the rest.',
-      },
-      {
-        kicker: 'Result — part two',
-        title: 'Free traffic that does not switch off',
-        body: [
-          'Ads cost money every time someone clicks. So we built something that keeps working when the ads are paused: a search presence the brand owns outright. With proper SEO, AEO and GEO work, we got their pages ranking for the terms real buyers type — and crucially for the competitive non-branded terms where new customers actually come from.',
-          'Anyone can rank for their own brand name. These were the contested category searches where the real buyers and the real competition live. Nearly every tracked term climbed, and several made very large leaps — one category term moved from position 32, on page four where nobody looks, to the top of page one.',
-        ],
-        table: {
-          title: 'Movement on competitive non-branded terms',
-          note: 'Term wording is generalised to protect the client. Positions are average rank, before and after.',
-          head: ['Term type', 'Rank now', 'Improved from'],
-          rows: [
-            ['Model-specific exhaust', '#1.7', '#3.3'],
-            ['Category exhaust', '#4.8', '#7.6'],
-            ['Platform + product', '#5.8', '#12.5'],
-            ['Model-specific handlebars', '#3.7', '#6.7'],
-            ['Generic custom handlebars', '#7.3', '#23.8'],
-            ['Broad category term', '#10.9', '#32.2'],
-          ],
-        },
-        points: [
-          {
-            label: 'Why it matters more than any single ad',
-            text: 'Ads are rented traffic — stop paying and it stops. Rankings are an asset you own. At its peak this organic traffic contributed over $26,000 in monthly sales on its own. Even if every ad were switched off tomorrow, the brand would keep generating meaningful revenue from traffic it does not pay for.',
-          },
-        ],
-      },
-      {
-        kicker: 'Result — part three',
-        title: 'A storefront built to sell, not just to look good',
-        body: [
-          'None of the traffic matters if the store loses people at the finish line. A slow, clunky site is a silent sales killer, especially when four out of five visitors are on a phone. So we built a custom, hand-coded store rather than dropping the brand onto an off-the-shelf theme.',
-          'Every part of it was coded pixel by pixel in Liquid for speed and for the way riders actually shop. We migrated the brand onto Shopify so the store stays fast under heavy traffic, makes checkout effortless, and will not buckle as the business grows toward $100K months and beyond.',
-        ],
-        table: {
-          title: 'The headline: a full year of revenue in half the time',
-          note: "Taken directly from the client's own store analytics.",
-          head: ['Period', 'Revenue'],
-          rows: [
-            ['All of the prior year', '$296,441'],
-            ['Following year, first 6 months only', '$277,302'],
-            ['Full engagement to date', '$628,200'],
-          ],
-        },
-      },
-    ],
-    proves: [
-      {
-        title: 'We owned the whole picture, not one channel',
-        text: 'Migrating the store, cutting spend that looked busy but did not convert, and building organic traffic that pays off for years are not ad tweaks. They are business decisions, and a single-channel agency is not positioned to make them.',
-      },
-      {
-        title: 'Efficiency beats budget',
-        text: 'The same ad spend produced multiples of the revenue. Scaling was a consequence of removing waste, not of asking the client for more money.',
-      },
-      {
-        title: 'We built an asset, not a rental',
-        text: 'The organic search presence keeps producing revenue whether or not the ad account is live. That is permanent growth rather than a monthly rental bill.',
-      },
-    ],
-    closing:
-      'Same budget. A full year of revenue in six months. And a search presence the brand keeps whether the ads run or not.',
-    accent: '#c7ff97',
-  },
-
-  /* ======================================================================
-     02 — PERFUME & FRAGRANCE · E-COMMERCE · DUBAI, UAE
-     ====================================================================== */
-  {
-    slug: 'fragrance-ecommerce',
-    index: '002',
-    title: 'The turnaround',
-    subtitle:
-      'A suspended ad account rebuilt into a 3.51 blended ROAS engine — and a client who now forwards us his competitors’ proposals to check.',
-    industry: 'Perfume & Fragrance',
-    niche: 'Multi-SKU e-commerce retail',
-    market: 'Dubai, United Arab Emirates',
-    year: '2025—2026',
-    duration: '18 months, ongoing',
-    services: [
-      'Google Ads',
-      'Meta Ads',
-      'Account reinstatement',
-      'Merchant feed rebuild',
-      'CRO & website redesign',
-      'Tracking & data',
-    ],
-    summary:
-      'A year of paid media had returned roughly one dirham for every dirham spent — then both the ads and merchant accounts were suspended and media stopped entirely. We diagnosed the real cause, got the accounts reinstated, rebuilt from zero, and took blended return from 1.02 to 3.51.',
-    cardMetric: { value: '3.51x', label: 'Blended ROAS, up from 1.02' },
-    metrics: [
-      { value: '3.51x', label: 'Blended return on ad spend', note: 'up from 1.02' },
-      { value: '5.28x', label: 'Best single month', note: 'peak monthly ROAS' },
-      { value: '4.2x', label: 'Revenue multiple', note: 'vs. the full preceding year' },
-      { value: '−52%', label: 'Cost per purchase', note: '138.82 → 66.09 dh' },
-    ],
-    chapters: [
-      {
-        kicker: 'The baseline',
-        title: 'A full year of spend that came back as itself',
-        body: [
-          'Before anything could be improved it had to be measured honestly. Across the preceding full year the account spent 41,368 dh and produced 42,126 dh in revenue — a blended return of 1.02 and a return on investment of 1.83%.',
-          'At 1.02 the advertising is not a growth channel. It is a break-even treadmill: money goes in, roughly the same money comes out, and none of it funds inventory, salaries or expansion. Worse, it hides the problem, because revenue is technically being generated so it looks like something is working.',
-        ],
-        table: {
-          title: 'The starting year, exactly as the data reported it',
-          head: ['Channel', 'Spend', 'Purchases', 'Revenue', 'CPA', 'ROAS'],
-          rows: [
-            ['Search', '11,722 dh', '105', '19,617 dh', '111.64 dh', '1.67'],
-            ['Paid social', '29,646 dh', '193', '22,509 dh', '153.61 dh', '0.76'],
-            ['Combined', '41,368 dh', '298', '42,126 dh', '138.82 dh', '1.02'],
-          ],
-        },
-        points: [
-          {
-            label: 'The allocation was backwards',
-            text: 'Paid social absorbed 72% of total spend and returned 0.76 — every 100 dh sent to it came back as 76 dh. Meanwhile search was the better platform at 1.67 and was being under-funded.',
-          },
-          {
-            label: 'Nobody owned the account day to day',
-            text: 'Within search, a single campaign spent 981 dh to produce one conversion, a 0.16 return. That is what an unmonitored campaign looks like when responsibility is split.',
-          },
-        ],
-      },
-      {
-        kicker: 'The blocker',
-        title: 'Both the ads and merchant accounts were suspended',
-        body: [
-          'This was the hardest part of the engagement and it had nothing to do with advertising skill. Both accounts were suspended under a circumventing-systems policy violation — one of the harder violations to recover from, because the platform treats it as deliberate rather than accidental. Shopping and Performance Max both depend on the merchant feed, so for a retailer whose catalogue is the product, the entire acquisition engine went down at once.',
-          'Rather than treating it as a support ticket, we audited the full account estate. The client had worked with several agencies over time and each one, on arrival, had created fresh ads and merchant accounts for the same business instead of requesting access to the existing ones. Several live accounts promoting one domain looks exactly like an advertiser rebuilding to escape prior enforcement. The system was working correctly. The account structure was not.',
-        ],
-        points: [
-          {
-            label: 'We consolidated before we appealed',
-            text: 'We inventoried every account tied to the business, identified which carried the legitimate history, made it the master and closed every duplicate. Most reinstatement attempts fail because they appeal first and clean up later — an appeal filed while duplicates are still live argues against a violation that is still true.',
-          },
-          {
-            label: 'Then we fixed the source',
-            text: 'The merchant account was consolidated the same way, and we brought the website into compliance so product data and policy pages met requirements. Feeds and landing pages are re-reviewed continuously, so a site that scrapes past the first check gets caught on a later one.',
-          },
-          {
-            label: 'Both accounts were reinstated — and have stayed reinstated',
-            text: 'One consolidated master account, a compliant site behind it, and no repeat suspension since.',
-          },
-        ],
-        pull: 'This work generated no impressions, no clicks and no revenue while it was happening. It was also, measurably, the single highest-return work of the entire engagement — because every result that followed is downstream of it.',
-      },
-      {
-        kicker: 'The restart',
-        title: 'We rebuilt rather than resuming',
-        body: [
-          'When access was restored we deliberately did not switch the old campaigns back on. The previous setup had produced a 1.02 return; restarting it would only have reproduced 1.02 more reliably.',
-          'Search spend was consolidated into a single, properly fed Performance Max campaign instead of being split across fragmented search and shopping campaigns. Splitting a modest budget starves each campaign of the conversion signal it needs to learn — one well-fed campaign learns, four hungry ones do not. That single campaign went on to deliver 636 conversions and 147,489 dh of revenue at a 3.28 return.',
-          'Paid social was restructured away from broad interest-theme targeting and onto catalogue-driven campaigns with dynamic product retargeting. For a retailer with a large SKU count the catalogue itself is the targeting signal — showing a specific bottle to someone who has already looked at that bottle beats guessing at interest categories.',
-        ],
-        table: {
-          title: 'Before and after, side by side',
-          note: 'Four times the revenue of the entire preceding year, in half the time, on 21% more spend.',
-          head: ['Metric', 'Prior full year', 'Six months after rebuild', 'Movement'],
-          rows: [
-            ['Ad spend', '41,368 dh', '50,099 dh', '+21%'],
-            ['Revenue', '42,126 dh', '176,063 dh', '4.2x'],
-            ['Purchases', '298', '758', '2.5x'],
-            ['Cost per purchase', '138.82 dh', '66.09 dh', '−52%'],
-            ['Blended ROAS', '1.02', '3.51', '+244%'],
-          ],
-        },
-      },
-      {
-        kicker: 'The trust',
-        title: 'Performance earned the budget, not the other way round',
-        body: [
-          'As results became visible, other agencies began approaching the client with pitches and audit reports of his own account. Rather than evaluating them privately or using them as leverage, he forwards them to us and asks whether their findings are accurate.',
-          'A competitor’s audit is designed to make the incumbent look negligent. Handing those documents to the incumbent and asking for an honest assessment is something a client does only when he is confident the answer will be straight even where it is unflattering.',
-          'On the strength of that performance the client approved close to a doubling of daily search investment — an increase of about 88%. Budget is the clearest expression of confidence a client has available, and it was earned by the efficiency work rather than requested ahead of it.',
-        ],
-        pull: 'I don’t want to go with any other agency. All your data-driven strategies are working for me.',
-      },
-      {
-        kicker: 'Where it goes next',
-        title: 'The bottleneck moved off the ad account',
-        body: [
-          'The account is now in a position most performance engagements never reach: the campaigns are no longer the constraint. Click-through rate has risen and cost per purchase has halved, but on-site conversion rate still sits below 1%, and the largest remaining loss of revenue now happens after the click.',
-          'So we have recommended and begun a redesign of the website, focused specifically on the stages where users drop out of the purchase journey rather than on a general visual refresh. It is being decided the same way every other decision in this engagement has been — from behaviour, not preference — and it will be measured against on-site conversion rate and blended ROAS, not against whether it looks more modern.',
-        ],
-        points: [
-          {
-            label: 'The honest caveat',
-            text: 'We are stating an expectation, not a guarantee. Scaling spend usually costs some efficiency as campaigns move beyond the highest-intent audiences, and a redesign takes time to prove out. The correct measure of this next phase is whether blended return holds at a materially higher spend level — not whether it sets a new single-month record.',
-          },
+          'The business generated $628,000 between November 2024 and July 2026, and matched a full prior year of revenue in six months — without raising overall ad spend.',
+          'The storefront, the organic presence and the retention sequences are the part that keeps working when a campaign is paused, which is the whole reason the build came before the scale-up.',
         ],
       },
     ],
     proves: [
       {
-        title: 'The cause of the failure and the cause of the growth were the same thing',
-        text: 'The accounts were suspended because several parties each owned a piece and nobody owned the whole. Performance recovered because one partner took ownership of all of it. The variable that changed was not skill or spend. It was who was accountable for the entire picture.',
+        title: 'The storefront is part of the revenue system, not a container for it',
+        text: 'Migrating the platform and restructuring the catalogue were not side projects around the advertising. They are why the advertising could scale at all.',
       },
       {
-        title: 'We do not stop at the edge of the scope',
-        text: 'The two highest-value pieces of work here — the reinstatement and the website redesign — sit outside anything a performance-marketing contract would describe. An external vendor is incentivised to flag them and wait.',
+        title: 'Rented traffic and owned traffic are built differently',
+        text: 'Ads bring the right people in now. Category and product structure keeps bringing them for years. Building only one of those leaves the business permanently renting.',
       },
       {
-        title: 'Trust is the asset that compounds fastest',
-        text: 'A five-star verified review, competitors’ audits forwarded to us for an honest opinion, and an 88% budget increase are not soft outcomes. They are what made the scale-up possible and what makes the website rebuild possible now.',
+        title: 'Measurement first, decisions second',
+        text: 'The tracking layer was rebuilt before budget was moved, which is why a 12.15× channel and a much weaker one could be told apart with confidence.',
       },
     ],
     closing:
-      'From 1.02 to 3.51 blended return. From a suspended account to 176,063 dh of revenue in six months — and a client who asks us to audit the people trying to replace us.',
+      '$628K through a system that had been stuck at $50K a month — with a migrated, restructured storefront underneath it that keeps earning when spend pauses.',
     accent: '#c7ff97',
   },
 
   /* ======================================================================
-     03 — LASH & BEAUTY FRANCHISE · FIVE STUDIOS · HOUSTON, TEXAS
+     04 — GULF ERECTION CONSTRUCTIONS · CUSTOM SOFTWARE · UAE
      ====================================================================== */
   {
-    slug: 'beauty-franchise-lead-gen',
-    index: '003',
-    title: 'The night shift',
-    subtitle:
-      'Reading the audience’s clock instead of the platform’s playbook — and finding the cheapest leads in the account hiding in the hours the studios were closed.',
-    industry: 'Lash & Beauty Franchise',
-    niche: 'Membership-based studios, five locations',
-    market: 'Houston, Texas, United States',
-    year: '2024—2026',
-    duration: '2 years, ongoing',
-    services: [
-      'Meta Ads',
-      'Google Ads',
-      'Multi-location strategy',
-      'Call-intent campaigns',
-      'Voice AI agent',
-    ],
-    summary:
-      'Five franchise studios under one operator, selling booked appointments that turn into recurring memberships — with no access to the website our ads pointed at. We ran anyway, changed channel when the platform stopped cooperating, and produced 451 booked-intent lead events at $28.22 each.',
-    cardMetric: { value: '451', label: 'Booked-intent lead events' },
-    metrics: [
-      { value: '415', label: 'Phone calls placed', note: 'across five studios' },
-      { value: '451', label: 'Total lead events', note: 'calls plus callback requests' },
-      { value: '$30.67', label: 'Cost per call', note: '$28.22 per lead event' },
-      { value: '41.5%', label: 'Calls after hours', note: 'on studios running 24/7' },
-    ],
-    chapters: [
-      {
-        kicker: 'The constraint',
-        title: 'A campaign we could not instrument',
-        body: [
-          'Most performance engagements begin by installing tracking. This one could not. The website, the booking system and the domain belong to the franchisor rather than to our client, so as the franchisee’s marketing partner we could not place a pixel, fire conversion events, or build a retargeting audience from site visitors.',
-          'No pixel means no website custom audiences, no lookalikes built from real customers, no retargeting of people who browsed and left, and no server-side confirmation that a click became a booking. Effectively every optimisation tool modern paid social depends on was unavailable to us.',
-          'Rather than stalling the launch until access was negotiated with the franchisor, we started without the standard setup and treated the studios themselves as the measurement layer. That only works if everyone understands their part, so we set out plainly what we were running, what signal we could and could not see, and what the studio teams needed to do at their end. The first campaigns generated qualified lead flow without any of the tracking infrastructure normally treated as a precondition.',
-        ],
-        pull: 'A vendor waits for access and bills for the delay. Being accountable for the outcome means finding a way to run inside the constraint — and being honest about the trade-off that comes with it.',
-      },
-      {
-        kicker: 'The blocker',
-        title: 'The platform stopped cooperating with the objective',
-        body: [
-          'The client then narrowed the goal from leads in general to phone-call leads exclusively, and paused paid social. We rebuilt the strategy around search accordingly.',
-          'After several months, cost per phone-call lead was running very high. Then the platform paused call-only ads, and within the remaining formats we could not remove the directions action or run a clean call-only objective. The campaign could no longer be pointed at the one outcome the client wanted.',
-          'This is a platform-capability failure rather than a media-buying one. No amount of bid, budget or creative work fixes an objective the platform will not let you isolate. We raised it immediately — before a review meeting, before a quarterly report, before the client noticed the numbers themselves — and we arrived with the replacement already designed rather than with a problem for the client to solve.',
-        ],
-        pull: 'The instruction was one channel, phone calls only. Following it faithfully would have meant continuing to spend the client’s money on a channel we already knew could not deliver the objective.',
-      },
-      {
-        kicker: 'The pivot',
-        title: 'One campaign per studio, one action, no dilution',
-        body: [
-          'Five separate campaigns, one per location, each pointed at its own studio’s phone line. Every studio has its own catchment, its own competitive pressure and its own cost per call, so each is funded and judged on its own numbers rather than averaged into a group total. A single pooled campaign optimises toward whichever studio converts most cheaply and quietly starves the rest — which for a franchise operator whose revenue is per studio means one location subsidising the group average while its own phone stays quiet.',
-          'With no pixel and no website audiences available, targeting had to be reasoned out from who the customer actually is rather than inherited from site behaviour. Each campaign was aimed at working women inside the realistic travel radius of that specific studio, and creative was built to produce a phone call rather than a click — leading with the studio, the service and a reason to ring now.',
-        ],
-        table: {
-          title: 'What the five studios produced',
-          note: '65 days. Studios anonymised. “20s+” and “60s+” are calls that connected and stayed connected for at least that long. Callbacks are requests submitted through the ad.',
-          head: ['Studio', 'Spend', 'Calls', 'Cost / call', '20s+', '60s+', 'Callbacks'],
-          rows: [
-            ['Studio A', '$2,806.71', '149', '$18.84', '29', '12', '11'],
-            ['Studio B', '$4,171.35', '106', '$39.35', '33', '21', '13'],
-            ['Studio C', '$2,964.41', '94', '$31.54', '29', '16', '6'],
-            ['Studio D', '$2,176.90', '44', '$49.48', '17', '10', '3'],
-            ['Studio E', '$609.45', '22', '$27.70', '9', '7', '3'],
-            ['All studios', '$12,728.82', '415', '$30.67', '117', '66', '36'],
-          ],
-        },
-        points: [
-          {
-            label: 'Why we report seconds, not just calls',
-            text: 'A call placed is intent. A call still live at 60 seconds is a conversation — long enough to have covered a service, a price and a date. Counting only the top-line number would flatter the report; counting the seconds is what lets us tell the client which studios are converting the demand we send them and which are dropping it at the desk.',
-          },
-          {
-            label: 'The honest reading',
-            text: 'These are lead-quality signals, not bookings. We can prove a conversation happened; we cannot see the appointment book. That boundary is set by the tracking constraint, and we state it rather than imply a booking rate we cannot evidence.',
-          },
-        ],
-      },
-      {
-        kicker: 'The discovery',
-        title: 'The audience’s clock, not the platform’s playbook',
-        body: [
-          'Every studio in the group opens at 9am and closes at 7pm. The default instinct is to run ads during business hours so calls arrive when someone can answer them. We did the opposite, deliberately.',
-          'The audience for lash extensions in these catchments is overwhelmingly working women. Someone in an office from nine to five does not research a beauty appointment at 11am and does not phone a studio from her desk. She looks in the evening, at night, and early in the morning before the day starts. If that is true, running ads only during studio hours means advertising to the audience precisely when it is least able to respond — and paying peak auction prices for the privilege.',
-          'There was a platform reason pointing the same way. Restricting delivery windows on paid social repeatedly pushes campaigns back into the learning phase, so scheduling costs efficiency across the whole campaign in exchange for tidier timing. You pay more per lead to receive fewer of them. We kept delivery continuous and solved the timing problem on the business side instead.',
-        ],
-        table: {
-          title: 'What the clock actually showed',
-          note: 'On the three studios running 24/7.',
-          head: ['Time block', 'Calls', 'Cost / call', '60s+ connects', 'Connect rate'],
-          rows: [
-            ['Studio hours (09:00–18:59)', '204', '$40.44', '43', '21.1%'],
-            ['After hours', '145', '$11.68', '6', '4.1%'],
-          ],
-        },
-      },
-      {
-        kicker: 'The uncomfortable part',
-        title: 'The cheapest leads in the account were the ones nobody answered',
-        body: [
-          'After-hours calls cost $11.68 against $40.44 during the working day — a seventh of the budget producing two-fifths of the calls. Then we looked at what happened to those calls.',
-          'During studio hours, 21.1% of calls became a conversation lasting a minute or more. After hours, 4.1% did. Same ads, same audience, same intent — five times less likely to be answered, for the simple reason that the studio is closed and nobody is at the desk. Of 145 after-hours calls, 139 never became a 60-second conversation. At the daytime rate roughly 31 would have. And because the platform stores no phone numbers, not one can be called back.',
-          'So our best discovery was also creating the group’s biggest leak. Reporting the first half alone would have been a more flattering case study and a worse piece of work.',
-        ],
-        points: [
-          {
-            label: 'What we are doing about it',
-            text: 'We designed a plan to route after-hours calls to a voice AI agent that answers live, handles the enquiry and converts it into a booking — so calls arriving at 9pm or 6am are captured at the moment of intent rather than ringing into an empty studio.',
-          },
-          {
-            label: 'Why this and not more budget',
-            text: 'The demand is already bought and paid for. Raising spend to generate more calls into an unanswered line multiplies the leak; answering the calls already arriving converts spend that is currently being wasted. The cheaper fix is almost always the one downstream of the ad account.',
-          },
-          {
-            label: 'Why it is our job',
-            text: 'Call handling is not performance marketing. It sits outside any media scope of work, in the same way the tracking constraint did at the start. It is simply the highest-value work available to this business right now, so it is the work we brought to them.',
-          },
-        ],
-      },
-    ],
-    proves: [
-      {
-        title: 'We understood the customer before we optimised the campaign',
-        text: 'The single most valuable decision here — running 24/7 — came from thinking about who buys lash extensions and when she is free to phone, not from a platform recommendation. The data then confirmed it. Audience understanding is the strategy; the ad account is where it gets expressed.',
-      },
-      {
-        title: 'We changed channel when the channel stopped working',
-        text: 'The platform could not isolate the objective the client had asked for, so we said so and brought the alternative with us. Following the original instruction would have been obedient, defensible, and wrong.',
-      },
-      {
-        title: 'We report the leak as loudly as the win',
-        text: '415 calls at $30.67 is the number a vendor puts on the cover. That 139 of them rang out unanswered is the number that actually grows this business.',
-      },
-    ],
-    closing:
-      '451 lead events in 65 days across five studios at $28.22 each — and the cheapest leads in the account arriving in the hours the doors are locked, with a plan on the table to answer them.',
-    accent: '#c7ff97',
-  },
-
-  /* ======================================================================
-     04 — HYPNOTHERAPY & WELLNESS · ABU DHABI, UAE
-     ====================================================================== */
-  {
-    slug: 'wellness-practice-whatsapp',
+    slug: 'gulf-erection-constructions',
     index: '004',
-    title: 'The workaround',
+    title: 'A document management system in 15 business days',
     subtitle:
-      'A regulated category, a payment gateway that would not approve, and a website that could never take a payment. So we moved the entire funnel into WhatsApp.',
-    industry: 'Hypnotherapy & Wellness',
-    niche: 'Solo practitioner, online one-to-one programmes',
-    market: 'Abu Dhabi, United Arab Emirates',
+      'Scattered files and incompatible workflows replaced with a custom system built around the practices that already existed — not a platform migration nobody would adopt.',
+    industry: 'Construction',
+    niche: 'Custom software · Micro-SaaS',
+    market: 'United Arab Emirates',
     year: '2026',
-    duration: '195 days, ongoing',
+    duration: '15 business days, brief to working system',
     services: [
-      'Meta Ads',
-      'Click-to-WhatsApp funnels',
-      'Website audit & fixes',
-      'CRM automation',
-      'Booking automation',
+      'Custom software development',
+      'No-code development',
+      'Bubble.io',
+      'Micro-SaaS platform',
+      'Cloud storage integration',
     ],
     summary:
-      'We were hired to run ads to a website checkout. Regulatory classification meant that checkout could never exist. Rather than waiting on an uncertain licensing outcome, we moved the transaction into a conversation — 668 qualified leads at AED 9.53 each.',
-    cardMetric: { value: 'AED 9.53', label: 'Cost per qualified conversation' },
+      'Gulf Erection Constructions was losing time to scattered documents and workflows that did not talk to each other. I built a custom document management system and deployed it in fifteen business days — designed to integrate with the practices the team already had rather than replace them, so that adoption did not require a training programme.',
+    cardMetric: { value: '15 days', label: 'Brief to working system' },
     metrics: [
-      { value: '668', label: 'Conversations started', note: 'qualified WhatsApp leads' },
-      { value: 'AED 9.53', label: 'Cost per conversation', note: 'about USD 2.59' },
-      { value: 'AED 6,365', label: 'Total invested', note: 'at AED 33 per day' },
-      { value: '52.4%', label: 'Tap → conversation', note: 'of link clicks converted' },
+      { value: '15 days', label: 'Brief to working system', note: 'business days, deployed' },
+      { value: '8×', label: 'Faster document retrieval', note: 'measured after go-live' },
+      { value: '20%', label: 'Project management efficiency', note: 'improvement reported' },
+      { value: '0', label: 'Training programmes required', note: 'built for intuitive adoption' },
     ],
     chapters: [
       {
-        kicker: 'The original plan',
-        title: 'Build the foundation, then buy the traffic',
+        kicker: 'The problem',
+        title: 'The files existed. Finding them was the job.',
         body: [
-          'Onboarding followed the usual sequence. We took access to the practice’s accounts and website, audited the site end to end, and fixed what the audit surfaced — structural issues, alignment and layout problems, and content that needed tightening. Then we created and configured the ad accounts from scratch so performance could actually be attributed rather than guessed at.',
-          'The plan was straightforward: paid media drives people to the service pages, they book a programme and pay on the website, and the practitioner runs the sessions online. Clean, self-service, and scalable for a solo practice. It depended on exactly one thing — the ability to take a card payment on the website.',
+          'Documents were scattered across storage nobody had agreed on, and the processes around them had grown incompatible with each other. On a construction project that is not an inconvenience — it is hours a week, repeated by everyone, on work that produces nothing.',
+          'The standard answer is a document management platform. The standard outcome is that a team keeps using the folders it already trusts, because the new system asks them to work differently on the day they are busiest.',
+        ],
+      },
+      {
+        kicker: 'The build',
+        title: 'Built around the existing practice, not against it',
+        body: [
+          'The system was built to fit the way this team already filed and retrieved things, and to integrate with the cloud storage they already used, rather than demanding a wholesale migration before it delivered any value.',
+          'It was built no-code, on Bubble, deliberately: for a scoped internal tool with a known workflow, that route puts a working system in front of the people who need it in weeks rather than quarters — and leaves it editable by someone other than its author.',
         ],
         points: [
           {
-            label: 'Why holding the whole stack mattered later',
-            text: 'Because we held the site, the accounts, the tracking and the payment setup together, we could see the blocker coming from the payment side rather than discovering it as a media problem. A media-only vendor would have been told about it weeks later.',
+            label: 'Integrated, not replacing',
+            text: 'Existing cloud storage and existing filing habits were carried into the system rather than deprecated by it.',
+          },
+          {
+            label: 'Scoped for adoption',
+            text: 'Designed so that minimal training was required — the measure of success was people actually using it, not feature count.',
+          },
+          {
+            label: 'Delivered as a micro-SaaS',
+            text: 'A contained platform with its own access model, rather than a script or a spreadsheet with ambitions.',
+          },
+        ],
+        pull:
+          'A tool nobody adopts has a feature list and no users. The constraint here was adoption, so adoption is what the design optimised for.',
+      },
+      {
+        kicker: 'The outcome',
+        title: 'Eight times faster retrieval, and a fifth off the management overhead',
+        body: [
+          'Document retrieval came out eight times faster, and project management efficiency improved by twenty per cent — on a system that was live fifteen business days after the brief.',
+        ],
+      },
+    ],
+    proves: [
+      {
+        title: 'The constraint is usually adoption, not capability',
+        text: 'Building around the practices a team already trusts is what makes a system get used. The version that requires everyone to change on day one is the version that quietly gets bypassed.',
+      },
+      {
+        title: 'No-code is a delivery decision, not a compromise',
+        text: 'For a scoped internal tool with a known workflow, it puts a working system in front of users in weeks and leaves it maintainable by someone other than the person who built it.',
+      },
+      {
+        title: 'Fifteen days is a process outcome',
+        text: 'The speed came from scoping the workflow properly before building, not from cutting the parts that make a system usable.',
+      },
+    ],
+    closing:
+      'A working document management system in fifteen business days — eight times faster retrieval, twenty per cent better project management overhead, and no training programme required to get there.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     05 — URBAN PRECISION · NEXT.JS BUILD · SYDNEY, AUSTRALIA
+     ====================================================================== */
+  {
+    slug: 'urban-precision',
+    index: '005',
+    title: 'Craft quality, matched by the digital presence',
+    subtitle:
+      'A premium joinery firm on a template-bound Wix site, rebuilt in Next.js on ninety-six sections of information architecture mapped before a line of design.',
+    industry: 'Custom Joinery & Renovation',
+    niche: 'Next.js website development',
+    market: 'Sydney, Australia',
+    year: '2025',
+    duration: 'Four research phases, then build',
+    services: [
+      'Next.js development',
+      'Website design',
+      'Information architecture',
+      'Local SEO',
+      'Integrations',
+    ],
+    summary:
+      'Urban Precision builds bespoke cabinetry, custom kitchens and whole-room renovations at a premium tier — on a template-bound Wix site that undermined the positioning. Four documented research phases came before any design: business goal research, ICP and persona definition, a scored competitor analysis, and an information architecture of ninety-six sections across twenty-two pages, delivered as an execution-level CSV.',
+    cardMetric: { value: '96 sections', label: 'Mapped across 22 pages before build' },
+    metrics: [
+      { value: '96', label: 'Sections mapped', note: 'across 22 pages, before design' },
+      { value: '6', label: 'Competitors scored', note: 'into threat tiers' },
+      { value: '9', label: 'Integrations at launch', note: 'analytics, maps, social, booking' },
+      { value: '2', label: 'Buyer personas', note: 'with objection handling built in' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'A premium business presenting itself on a template',
+        body: [
+          'The work was premium; the site was not. A template-bound Wix build left three things missing at once: insufficient social proof, no SEO architecture, and no owned platform on which a prospect could evaluate, trust or convert.',
+          'For a boutique firm competing on craft, a site that looks like everyone else’s is not a neutral starting point — it actively argues against the price.',
+        ],
+      },
+      {
+        kicker: 'The research',
+        title: 'Four documented phases before anything was designed',
+        body: [
+          'Business goal research audited the existing site and the competitive landscape. Two buyer personas were defined with their objections written down. Six competitors were scored into threat tiers, which is where the uncontested opening appeared: nobody in that market was addressing trade partners.',
+          'The information architecture that came out of it — ninety-six sections across twenty-two pages — was handed over as a strategy document and an execution-level CSV, so it could be built against rather than interpreted.',
+        ],
+        points: [
+          {
+            label: 'Hub-and-spoke service architecture',
+            text: 'Services structured so each one has its own depth without fragmenting the site into unrelated pages.',
+          },
+          {
+            label: 'A first-mover trade partners route',
+            text: 'A B2B pathway none of the six scored competitors had built, found by scoring them rather than guessing.',
+          },
+          {
+            label: 'Structured local SEO',
+            text: 'A /projects/[service]-[suburb]/ URL pattern, so local intent has a real page to land on instead of a filtered view.',
           },
         ],
       },
       {
-        kicker: 'The blocker',
-        title: 'A regulated category, and a licence that did not exist',
+        kicker: 'The build',
+        title: 'Custom Next.js, because the template was the constraint',
         body: [
-          'Health and wellness is among the most heavily policed categories in paid media — and in the UAE, in payments as well. We applied for a merchant account with a widely used regional payment gateway. The application did not fail on paperwork. It failed on business classification.',
-          'The practice holds a professional licence covering lifestyle consultancy and complementary wellness services. The reviewers’ position was that the website presented its therapeutic modalities in a clinical context, which sits outside that licensed activity. The requirement settled on a different licence class entirely, obtained from a different authority, against a different definition of the practice. We investigated the route thoroughly and it was neither quick nor certain — and the business could not wait on an uncertain licensing outcome to start earning.',
+          'The site was rebuilt as a custom Next.js application, which is what gave back full SEO control, performance headroom and the design freedom to express a premium brand rather than approximate one.',
+          'Nine integrations went live with it — analytics and search console, tag management, business profile and maps, social, pixel, booking and file upload — alongside a scalable CMS model for projects, blog and testimonials, and a single structured conversion path.',
         ],
-        table: {
-          title: 'Seventeen days, and who did the work',
-          note: 'Reconstructed from the merchant application correspondence. Third-party names omitted.',
-          head: ['Day', 'What happened', 'Driven by'],
-          rows: [
-            ['2–5', 'Website review requirements issued; application submitted, payouts to be suspended until met', 'Gateway'],
-            ['8', 'Updated terms, privacy and cookie policies, consent documentation and pricing pages submitted', 'Us'],
-            ['8', 'Application placed on hold — services presented in a clinical context, outside licensed activity', 'Bank'],
-            ['9', 'Licence submitted with three proposed remedies, and a direct request for the exact requirement', 'Us'],
-            ['9', 'Requirement confirmed: a different professional licence class', 'Gateway'],
-            ['9', 'Regulatory clarification submitted arguing complementary-therapy classification', 'Client'],
-            ['13–17', 'Three further follow-ups chasing status and confirming whether wording changes would suffice', 'Us'],
-            ['19', 'Escalated to an internal call. No approval granted.', '—'],
-          ],
-        },
-        points: [
-          {
-            label: 'We ran the regulatory correspondence, not the client',
-            text: 'Across those seventeen days the majority of the outbound emails came from our side — submitting revised policies and consent documentation, supplying the licence, proposing three concrete remedies rather than waiting to be told one, and chasing status four separate times as the review moved between the gateway and the bank.',
-          },
-          {
-            label: 'And when it did not work',
-            text: 'It is worth being plain: we did not win this one. The approval never came. What we did do was establish that quickly and definitively enough to stop spending time on it — which turned out to be the valuable outcome.',
-          },
-        ],
+        pull:
+          'An execution-level information architecture compounds with use rather than ageing. That is the asset here, more than any individual page.',
       },
       {
-        kicker: 'The decision',
-        title: 'Change the funnel, not the paperwork',
+        kicker: 'Where it stands',
+        title: 'Live, generating qualified local enquiries — and too early for a traffic claim',
         body: [
-          'Every version of the original plan ended at a payment page that could not be built. So we stopped treating that as a problem to solve and started treating it as a fixed constraint, then asked a different question: where else can this transaction happen?',
-          'On a phone call, in a conversation. The practitioner already spoke to every client before their first session; the payment could simply be arranged there. That single change removed the gateway from the critical path entirely — the business no longer needed merchant approval in order to trade. It meant conceding that the plan the client had been sold on was not achievable in this category, at this licence class, at this time. Saying that early is uncomfortable. Saying it late is far more expensive.',
-          'We also set search aside and moved the entire budget to one channel running click-to-WhatsApp campaigns. Search policy handling of health-adjacent advertising is restrictive, and its strengths depended on the website doing work it could no longer do. At AED 33 a day, splitting across two platforms would have starved both of the conversion signal needed to optimise.',
+          'The site launched, runs smoothly and is generating qualified local enquiries, and the engagement has moved into active growth and optimisation.',
+          'No traffic, ranking or conversion-rate figures are asserted here. The build is early in its lifecycle, and numbers quoted this soon after launch are noise dressed up as evidence.',
+        ],
+      },
+    ],
+    proves: [
+      {
+        title: 'Research is what finds the uncontested position',
+        text: 'The trade partners pathway was not a creative idea. It fell out of scoring six competitors and noticing that none of them had one.',
+      },
+      {
+        title: 'The template was the ceiling',
+        text: 'SEO control, performance and premium expression were all capped by the platform. Rebuilding in Next.js was the change that unlocked all three at once.',
+      },
+      {
+        title: 'Say when it is too early to claim a result',
+        text: 'The honest version of an early-lifecycle case study reports what was built and what is live, and leaves the performance claims until there is performance to report.',
+      },
+    ],
+    closing:
+      'Ninety-six sections across twenty-two pages, nine integrations, a first-mover B2B route and a custom Next.js build — a premium positioning now defended by structure rather than asserted by adjectives.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     06 — DECODING WISDOM · WEBSITE & IA · MULTI-MARKET
+     ====================================================================== */
+  {
+    slug: 'decoding-wisdom',
+    index: '006',
+    title: 'The owned home for a rented audience',
+    subtitle:
+      'Fifty-five episodes, world-class guests, and every one of them living on somebody else’s platform. Thirty-one pages at launch, built to scale past five hundred.',
+    industry: 'Podcast & Media',
+    niche: 'Website & information architecture',
+    market: 'Canada · US · UK · Australia',
+    year: '2025',
+    duration: 'Strategy front-loaded, then build',
+    services: [
+      'Website development',
+      'Digital strategy',
+      'Information architecture',
+      'UI/UX design',
+      'CMS templates',
+    ],
+    summary:
+      'A fifteen-month-old podcast with world-class guests and fifty-five-plus episodes was operating entirely on rented platforms — YouTube, Spotify, Apple, Amazon, Instagram, LinkedIn — with no website, no email capture and no search visibility. The gap was infrastructural, not creative. I built the owned home: thirty-one pages at launch on a content model one founder can operate, architected to scale past five hundred URLs.',
+    cardMetric: { value: '31 pages', label: 'At launch, built to scale past 500' },
+    metrics: [
+      { value: '55+', label: 'Episodes given an owned home', note: 'previously only on rented platforms' },
+      { value: '31', label: 'Pages at launch', note: 'scaling to 500+ URLs by year three' },
+      { value: '4', label: 'English-language markets', note: 'Canada, US, UK, Australia' },
+      { value: '121', label: 'Pre-launch QA items', note: 'checked before go-live' },
+    ],
+    chapters: [
+      {
+        kicker: 'The diagnosis',
+        title: 'The show was not the problem — the absence of infrastructure was',
+        body: [
+          'Fifty-five episodes and a guest list most shows would envy, distributed across six platforms, none of them owned. No website, no email capture, no indexable surface, and no single URL that was the canonical answer to the brand’s own name.',
+          'A rented audience is a real audience right up until the platform changes its mind. Everything in this build exists to convert that into something the show holds itself.',
         ],
       },
       {
         kicker: 'The strategy',
-        title: 'Target the problem, not the demographic',
+        title: 'Front-loaded before a single layout',
         body: [
-          'Click-to-WhatsApp is a format, not a strategy. What made it work was matching the ad to the specific problem a person was already carrying, then qualifying them before the practitioner ever spent time on the conversation.',
-          'Rather than advertising the modality to a broad wellness audience, we researched and built interest-based targeting around the specific conditions the practice treats, then ran ads mapped to distinct service lines — alongside a general programme for everyone who did not fit neatly into one of them. Someone who has not slept properly in months does not identify as a person seeking hypnotherapy. She identifies as a person who cannot sleep. An ad that names the problem gets recognised; an ad that names the modality has to be decoded first.',
-          'We then built qualifying questions into the WhatsApp flow, so people answered a short set of questions the moment the thread opened. A single practitioner cannot triage hundreds of enquiries — volume without filtering is not a benefit to her, it is a second full-time job.',
+          'Business-goal research and a brand audit came first, then a competitor analysis across six established shows, then ICP and persona development for the two audiences that actually pay — sponsors and guests.',
+          'The information architecture was built around a three-layer offering hierarchy: the core podcast, bridge content, and the commercial surface. Eight user flows were mapped before layout, so the structure answered real journeys rather than a navigation convention.',
         ],
-        table: {
-          title: 'The funnel, stage by stage',
-          note: '195 days, one campaign, one channel, AED 33 per day.',
-          head: ['Stage', 'Result', 'Conversion from previous'],
-          rows: [
-            ['People reached', '53,494', '—'],
-            ['Impressions served', '254,659', '4.76 per person'],
-            ['Clicks (all)', '4,614', '1.81% of impressions'],
-            ['Tapped through to WhatsApp', '1,275', '27.6% of all clicks'],
-            ['Started a conversation', '668', '52.4% of link clicks'],
-          ],
-        },
         points: [
           {
-            label: 'The number that matters is the last one',
-            text: 'More than half of everyone who tapped the ad opened a real conversation. A website funnel here would have lost most of that traffic before booking — and all of it, since the payment step did not exist.',
+            label: 'Three-layer hierarchy',
+            text: 'Core podcast, bridge content and commercial surface — so sponsorship and speaking do not have to interrupt the show to be findable.',
           },
           {
-            label: 'The honest boundary',
-            text: 'These are qualified conversations, not bookings. Payment and scheduling happen off-platform.',
+            label: 'Eight user flows, mapped first',
+            text: 'Listener, sponsor, guest, event organiser and press each have a path that was designed rather than inherited.',
+          },
+          {
+            label: 'A one-founder content model',
+            text: 'Dynamic CMS templates for episodes, guests and show notes, so publishing does not require a developer.',
           },
         ],
       },
       {
-        kicker: 'Beyond the brief',
-        title: 'What we built after the ads',
+        kicker: 'What went live',
+        title: 'A canonical home, and the surfaces that make it earn',
         body: [
-          'Generating 668 conversations for a one-person practice creates a problem as well as an opportunity. Handing over the leads and calling the job done would have been defensible, and useless.',
-          'So we set up a CRM and an automated booking system, so enquiries are captured, tracked and scheduled without manual administration. The practitioner does not maintain booking records, chase her own calendar, or rebuild the same information across tools. What is left for her to do is take the payment and issue the intake form. Everything else runs without her.',
-          'Lead generation that overwhelms the person receiving it is not a result. For a solo practitioner the constraint on growth is her time, so the highest-value work available was giving her more of it.',
+          'Thirty-one pages at launch: structured show notes and guest metadata so every episode and guest is indexable, a media kit and press kit for sponsors, a newsletter lead magnet for owned-audience capture, and an enquiry funnel that gives sponsorship somewhere to land.',
+          'One hundred and twenty-one items were checked against a pre-launch QA list before it went live.',
         ],
-        pull: 'We were engaged to run ads. What actually moved the business was a website audit, a seventeen-day merchant dispute, a redesigned sales model, and a CRM build. Not one of those was in the scope of work.',
+        pull:
+          'Email capture went from none to one. That sounds trivial written down, and it is the difference between an audience you reach and an audience you own.',
       },
     ],
     proves: [
       {
-        title: 'We changed the business model when the business model was blocked',
-        text: 'The plan required online payments; online payments required a licence that could not be obtained in a workable timeframe. Rather than waiting, appealing indefinitely, or quietly under-delivering, we moved the transaction into a conversation — and the practice started earning from paid media without ever getting the gateway approved.',
+        title: 'Distribution is not infrastructure',
+        text: 'Six platforms and fifty-five episodes still amounted to no owned surface, no capture and nothing indexable. Reach and ownership are different assets.',
       },
       {
-        title: 'We did the unglamorous work because it was the work that mattered',
-        text: 'A website audit, a merchant onboarding fight, and a CRM build are not what a performance marketing agency is hired to do. They were the three things standing between this client and revenue.',
+        title: 'The architecture has to outlive the launch',
+        text: 'Thirty-one pages that scale to five hundred URLs is a content model decision made at the start, not a migration problem inherited at year three.',
       },
       {
-        title: 'We built for the business that exists, not the one in the deck',
-        text: 'One practitioner with an AED 33 daily budget. The answer was not more channels or a bigger plan — it was one campaign, aimed precisely, qualified before it reached her, and supported by automation so she could actually serve the people it brought.',
+        title: 'Build for the person who has to run it',
+        text: 'Dynamic templates and structured metadata exist so a single founder can publish without a developer. If it can only be maintained by its builder, it was built wrong.',
       },
     ],
     closing:
-      '668 qualified conversations at AED 9.53, from AED 6,365 and a channel we were not originally planning to rely on — in a category where the intended sales route was never available to us at all.',
+      'Fifty-five episodes given a canonical home, thirty-one pages built to scale past five hundred, and an owned audience that no longer depends on a platform’s goodwill.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     07 — AMERICAN PRECAST WALLS · WEBSITE & IA · UNITED STATES
+     ====================================================================== */
+  {
+    slug: 'american-precast-walls',
+    index: '007',
+    title: 'Precision manufacturing, given a precise structure',
+    subtitle:
+      'Two product systems, six stakeholder paths and five application sectors — a complex manufacturer catalogue structured so specifying audiences can actually specify.',
+    industry: 'Precast Concrete Manufacturing',
+    niche: 'Website & information architecture',
+    market: 'United States',
+    year: '2026',
+    duration: 'Strategy, IA, design and build',
+    services: [
+      'Website strategy',
+      'Information architecture',
+      'UI/UX design',
+      'Web development',
+      'Technical content structuring',
+    ],
+    summary:
+      'American Precast Walls manufactures precast concrete wall and fence systems across five project types. The difficulty was a complex catalogue serving multiple stakeholder groups — architects, municipal engineers and HOA boards — buying identical products for different reasons and needing technical drawings before committing. That complexity is what usually turns a manufacturer site into a brochure nobody can navigate.',
+    cardMetric: { value: '6 paths', label: 'One per stakeholder group' },
+    metrics: [
+      { value: '2', label: 'Product systems', note: 'each with distinct architecture' },
+      { value: '6', label: 'Stakeholder paths', note: 'architects, engineers, HOAs and more' },
+      { value: '5', label: 'Application sectors', note: 'for project-based buyers' },
+      { value: '4', label: 'Finish taxonomy', note: 'consistent across both systems' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'Identical products, bought for entirely different reasons',
+        body: [
+          'An architect, a municipal engineer and an HOA board can all specify the same wall system and arrive needing completely different things to justify it. All of them want technical drawings before they commit.',
+          'Structured around the company rather than the purchase, a catalogue like this becomes a brochure: accurate, comprehensive and impossible to buy from.',
+        ],
+      },
+      {
+        kicker: 'The structure',
+        title: 'Two product systems, two parallel entry routes',
+        body: [
+          'The site was restructured around the two product systems rather than the company narrative. Permacrete wall systems and Duracrete fences each received their own architecture, with a consistent finish taxonomy — StoneCast, Woodcast, BrickCast and BlockCast — so options can be compared within a system rather than across a price list.',
+          'Two parallel entry routes then run over the top: five application sectors for project-based buyers who think in terms of what they are building, and six stakeholder paths for architects, engineers, land developers, HOAs, public works and general contractors who think in terms of what they need to approve.',
+        ],
+        points: [
+          {
+            label: 'System-first architecture',
+            text: 'Permacrete and Duracrete structured separately, so each reads as a product line rather than a catalogue section.',
+          },
+          {
+            label: 'Consistent finish taxonomy',
+            text: 'The same four finishes across both systems, which is what makes comparison possible at all.',
+          },
+          {
+            label: 'Two ways in',
+            text: 'By sector for project buyers, by role for specifying audiences — the same catalogue reached by whichever logic the visitor already uses.',
+          },
+        ],
+      },
+      {
+        kicker: 'The decisive call',
+        title: 'The CAD and specification library is a section, not a resource page',
+        body: [
+          'For a specifying audience, the drawing set is the decision point. Burying it under a resources menu treats the most important asset on the site as an afterthought.',
+          'It was built as a primary section instead — because the moment an architect can pull the drawing they need, the manufacturer is on the shortlist.',
+        ],
+        pull:
+          'The CAD library is not a resource. For half of these buyers it is the product page.',
+      },
+    ],
+    proves: [
+      {
+        title: 'Structure around the purchase, not the org chart',
+        text: 'Two product systems and two entry routes exist because that is how the catalogue is actually bought — not because it is how the business is organised internally.',
+      },
+      {
+        title: 'Different buyers need different doors to the same product',
+        text: 'Sector routes and stakeholder routes reach the same systems by different logic, so nobody has to browse the way somebody else thinks.',
+      },
+      {
+        title: 'Promote the asset that closes the decision',
+        text: 'Making the CAD and specification library a primary section rather than a buried resource is an information architecture decision with a direct commercial consequence.',
+      },
+    ],
+    closing:
+      'A complex manufacturer catalogue given a precise structure: two systems, one consistent finish taxonomy, five sector routes, six stakeholder paths, and the specification library treated as what it actually is.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     08 — ADin · NEXT.JS & CMS · NEW YORK, USA
+     ====================================================================== */
+  {
+    slug: 'adin',
+    index: '008',
+    title: 'A premium digital home for decades of work',
+    subtitle:
+      'Established client work, specialist expertise and real market history — none of it legible on the legacy site. Rebuilt in Next.js on a structured CMS.',
+    industry: 'B2B Marketing & Communications',
+    niche: 'Next.js & CMS development',
+    market: 'New York, United States',
+    year: '2025',
+    duration: 'Strategy, IA, design and build',
+    services: [
+      'Next.js development',
+      'Website design',
+      'CMS development',
+      'Information architecture',
+      'UI/UX & CRO',
+    ],
+    summary:
+      'ADin works in healthcare, nutrition and life sciences and had decades of client work behind it. The legacy site communicated none of that with clarity, hierarchy or visual confidence: an outdated structure obscured the capabilities, case study storytelling was weak, content and imagery were inconsistent, and the experience did not read as premium on any device.',
+    cardMetric: { value: 'Next.js', label: 'Rebuilt on a structured CMS' },
+    metrics: [
+      { value: 'Next.js', label: 'Custom build', note: 'replacing a legacy site' },
+      { value: 'CMS', label: 'Structured content model', note: 'built to keep growing' },
+      { value: 'IA', label: 'Rebuilt around user needs', note: 'not the internal org chart' },
+      { value: 'CRO', label: 'Hierarchy and journeys planned', note: 'before interface design' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'The credentials existed. The site did not carry them.',
+        body: [
+          'Specialist expertise across healthcare, nutrition and life sciences, a long client list, and a site whose structure actively hid all of it. Capabilities were obscured, case studies were told weakly, and content and imagery had drifted out of consistency over years of incremental edits.',
+          'For a firm whose entire proposition is clarity of communication, that gap is not cosmetic.',
+        ],
+      },
+      {
+        kicker: 'The approach',
+        title: 'Strategy before interface',
+        body: [
+          'Business and content discovery came first, to establish positioning and the real service structure. Information architecture was then rebuilt around user needs and business priorities rather than the shape of the organisation.',
+          'A full case study review identified where the storytelling was losing the work, and UX and CRO planning addressed hierarchy, calls to action and journeys before any visual design began. Competitive analysis set the direction for a contemporary premium look.',
+        ],
+        points: [
+          {
+            label: 'Service structure, redefined',
+            text: 'Discovery established what is actually sold, which is what the navigation was then built to expose.',
+          },
+          {
+            label: 'Case studies, retold',
+            text: 'A review of the existing portfolio found the gaps in content and storytelling that were flattening decades of work.',
+          },
+          {
+            label: 'CMS structuring',
+            text: 'A content model built so team, client and asset presentation stays consistent as things are added.',
+          },
+        ],
+      },
+      {
+        kicker: 'The outcome',
+        title: 'A business development platform, not a brochure',
+        body: [
+          'The result is a modern, responsive presence that reflects the expertise positioning, with stronger portfolio presentation, clearer service discovery and a consistent way to present team, clients and assets.',
+          'Because the content model is structured rather than hand-built, the foundation scales with future additions instead of degrading with them.',
+        ],
+        pull:
+          'A site that hides decades of work is not a neutral asset. It argues, quietly, against the fee.',
+      },
+    ],
+    proves: [
+      {
+        title: 'Hierarchy is the deliverable',
+        text: 'The expertise was already there. What changed was structure, storytelling and hierarchy — which is what made it legible.',
+      },
+      {
+        title: 'Rebuild the content model, not just the pages',
+        text: 'CMS structuring is why consistency survives the next fifty additions rather than eroding with them.',
+      },
+      {
+        title: 'CRO belongs in planning, not in a later optimisation phase',
+        text: 'Hierarchy, calls to action and journeys were designed before the interface, not retrofitted onto it.',
+      },
+    ],
+    closing:
+      'Decades of specialist work given a structure that finally carries it — a premium, scalable platform built for business development rather than for archiving.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     09 — TECHNOBRIQ · B2B WEBSITE · DOHA, QATAR
+     ====================================================================== */
+  {
+    slug: 'technobriq',
+    index: '009',
+    title: 'Professional display solutions, made credible',
+    subtitle:
+      'LED video walls, digital signage and kiosks sold to enterprise and government buyers — a site built to establish credibility first and route qualified enquiries second.',
+    industry: 'Display Technology',
+    niche: 'B2B website development',
+    market: 'Doha, Qatar',
+    year: '2025',
+    duration: 'Design, build and launch',
+    services: [
+      'Website design & build',
+      'SEO',
+      'B2B lead generation',
+      'WhatsApp routing',
+    ],
+    summary:
+      'Technobriq supplies, installs and supports LED video walls, digital signage and self-service kiosks across Qatar. The site had to establish credibility with enterprise and government purchasers — audiences that buy on proof and process — and then move qualified enquiries efficiently to a human.',
+    cardMetric: { value: '4.9★', label: 'Google rating, surfaced as proof' },
+    metrics: [
+      { value: '4.9★', label: 'Google rating', note: 'surfaced as on-page proof' },
+      { value: '4', label: 'Authorised partners', note: 'Samsung, Unilumin, Leyard, ELX' },
+      { value: '2', label: 'Primary actions', note: 'WhatsApp or a detailed quote' },
+      { value: 'B2B', label: 'Enterprise & government', note: 'the buyers the site is built for' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'Enterprise and government buyers do not buy from a brochure',
+        body: [
+          'These are procurement audiences. Before anyone discusses a video wall, they need to believe the supplier can install it, support it, and still be there in three years.',
+          'A site aimed at them has two jobs in order: prove the credibility, then make the enquiry effortless. Doing the second without the first produces enquiries nobody wanted.',
+        ],
+      },
+      {
+        kicker: 'The build',
+        title: 'Evidence first, then two clear ways to start a conversation',
+        body: [
+          'The design is dark and engineering-focused, built around actual installations rather than stock imagery, with authorised-partner logos — Samsung, Unilumin, Leyard and ELX — carrying the credential the buyer is checking for.',
+          'High-intent visitors are then routed to two primary actions and no more: WhatsApp for the fast answer, or a detailed quote request for the procurement path. Supporting evidence reinforces each stage rather than sitting on a separate credentials page.',
+        ],
+        points: [
+          {
+            label: 'Real installations as the imagery',
+            text: 'Delivered projects do the work that stock photography cannot for a technical buyer.',
+          },
+          {
+            label: 'Partner credentials in position',
+            text: 'Authorised-partner status placed where the doubt is, not archived on an about page.',
+          },
+          {
+            label: 'Two routes, deliberately',
+            text: 'WhatsApp or a structured quote request — matched to how fast the buyer needs to move.',
+          },
+        ],
+        pull:
+          'Proof placed where the doubt is, rather than collected on a page nobody scrolls to.',
+      },
+    ],
+    proves: [
+      {
+        title: 'For B2B, credibility is the conversion asset',
+        text: 'Partner logos, real installations and a visible rating are not decoration on this site — they are the mechanism.',
+      },
+      {
+        title: 'Fewer routes convert better than more',
+        text: 'Two primary actions, matched to two real buying speeds, beats a page of equally weighted contact options.',
+      },
+      {
+        title: 'Design to the buyer, not to the category',
+        text: 'A dark, engineering-led treatment reads as competence to a technical procurement audience in a way a bright consumer aesthetic would not.',
+      },
+    ],
+    closing:
+      'A B2B storefront for enterprise and government procurement — evidence placed where the doubt is, and two clear routes from interest to a real conversation.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     10 — ZOOPHIRE · LANDING PAGE · SAAS PRODUCT
+     ====================================================================== */
+  {
+    slug: 'zoophire',
+    index: '010',
+    title: 'A full platform landing page, live in 24 hours',
+    subtitle:
+      'An AI hiring platform taken from concept to a live, converting landing page in a single day — because there was nothing left to discover.',
+    industry: 'SaaS · AI Hiring',
+    niche: 'Landing page development',
+    market: 'zoophire.io',
+    year: '2026',
+    duration: '24 hours, concept to live',
+    services: [
+      'Product strategy',
+      'Landing page development',
+      'Conversion copywriting',
+      'UI/UX',
+    ],
+    summary:
+      'Zoophire is an AI-powered end-to-end hiring platform — job posting, ATS screening, candidate emails, interview scheduling and offer agreements. The brief was to design and launch its landing page from concept to live in a single day. It worked because we had built the product itself, which removed the discovery phase entirely.',
+    cardMetric: { value: '24 hours', label: 'Concept to live' },
+    metrics: [
+      { value: '24 hrs', label: 'Concept to launch', note: 'design, copy and build' },
+      { value: '5', label: 'Hiring stages made visible', note: 'the workflow as the centrepiece' },
+      { value: '0', label: 'Discovery sessions', note: 'we had built the product' },
+      { value: '1', label: 'Day, end to end', note: 'strategy through deployment' },
+    ],
+    chapters: [
+      {
+        kicker: 'Why it was possible',
+        title: 'Twenty-four hours is a clarity outcome, not a speed trick',
+        body: [
+          'The rapid turnaround worked because the product was ours. There was no discovery phase, no stakeholder alignment cycle and no waiting on answers — complete strategic clarity existed before the first block was placed.',
+          'AI tooling then accelerated layout scaffolding, component generation, copy refinement and development. That acceleration is only available to a project that already knows exactly what it is saying; applied to an unclear brief it produces the wrong thing faster.',
+        ],
+        pull:
+          'AI made the build faster. Knowing precisely what to build is what made twenty-four hours possible at all.',
+      },
+      {
+        kicker: 'The positioning',
+        title: 'Not the AI — the outcome the recruiter is actually chasing',
+        body: [
+          'The obvious page for an AI hiring platform leads with the AI. This one does not. Positioning was built around the core recruiter goal instead: hiring faster without candidates dropping out along the way.',
+          'The five-stage workflow became the visual centrepiece, reflecting the prospect’s own process back at them — so the product is understood as a better version of what they already do rather than as a category they have to learn.',
+        ],
+      },
+      {
+        kicker: 'The structure',
+        title: 'Objection handling built into the architecture',
+        body: [
+          'The predictable blocker for a hiring platform is stack compatibility — every recruiter has an ATS and a calendar they are not planning to abandon. That objection was handled architecturally, addressed in the page structure before a prospect had to go looking for the answer.',
+          'The result is a page that carries product strategy, conversion copy and UI in one pass, live the same day it was conceived.',
+        ],
+      },
+    ],
+    proves: [
+      {
+        title: 'Speed comes from clarity, not from cutting',
+        text: 'Zero discovery sessions is not a shortcut here — it is what having built the product yourself buys you. The day was spent building, because nothing needed deciding.',
+      },
+      {
+        title: 'Sell the outcome, not the technology',
+        text: 'Leading with the recruiter goal rather than the AI is why the workflow diagram became the centrepiece instead of a feature grid.',
+      },
+      {
+        title: 'Objections belong in the structure',
+        text: 'Stack compatibility was answered by where it sits on the page, not by an FAQ entry hoping to be found.',
+      },
+    ],
+    closing:
+      'Concept to a live, positioned, objection-handled landing page in twenty-four hours — with the five-stage workflow doing the selling.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     11 — SPARROWTECK · E-COMMERCE BUILD · INDIA
+     ====================================================================== */
+  {
+    slug: 'sparrowteck',
+    index: '011',
+    title: 'From Instagram-only to a working storefront',
+    subtitle:
+      'A custom sprocket manufacturer selling entirely through Instagram DMs, given a real, scalable store — built in four weeks.',
+    industry: 'Custom Sprocket Manufacturing',
+    niche: 'E-commerce development',
+    market: 'India',
+    year: '2022—2023',
+    duration: '4 weeks to build',
+    services: [
+      'E-commerce website development',
+      'SEO',
+      'Meta Ads',
+    ],
+    summary:
+      'Sparrowteck manufactures custom sprockets and was running its entire business through Instagram. Every order was a conversation, nothing was searchable, and there was no surface for anyone who was not already following. A fully functional, scalable online store replaced that model in four weeks, with SEO and paid campaigns built around it.',
+    cardMetric: { value: '4 weeks', label: 'To a live storefront' },
+    metrics: [
+      { value: '4 weeks', label: 'To develop the store', note: 'from Instagram-only to live' },
+      { value: '₹4L', label: 'Revenue scaled', note: 'through the new storefront' },
+      { value: 'SEO', label: 'Organic traffic grown', note: 'alongside paid campaigns' },
+      { value: '2', label: 'Demand channels built', note: 'organic search and Meta' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'A real manufacturing business running on direct messages',
+        body: [
+          'Selling custom sprockets through Instagram works until it does not. Every order needs a conversation, the catalogue lives in a grid nobody can filter, and none of it is searchable by a buyer who does not already follow the account.',
+          'There was demand. There was simply nowhere for demand that had not already found the Instagram page to land.',
+        ],
+      },
+      {
+        kicker: 'The build',
+        title: 'A scalable store, then the traffic to fill it',
+        body: [
+          'A fully functional e-commerce store replaced the Instagram-only model in four weeks — a real catalogue, a real checkout and a structure that could grow past the founder’s ability to answer messages.',
+          'SEO followed, with content explaining the benefits of custom sprockets so that the organic surface answered the question buyers were actually typing. Targeted Meta campaigns then drove additional traffic and leads against the same catalogue.',
+        ],
+        points: [
+          {
+            label: 'A store that scales past DMs',
+            text: 'Catalogue, checkout and structure, so order volume stops being capped by reply speed.',
+          },
+          {
+            label: 'Content built for the real query',
+            text: 'Explaining custom sprocket benefits, because that is what buyers search before they search a brand.',
+          },
+          {
+            label: 'Paid layered on owned',
+            text: 'Meta campaigns pointed at a storefront that could already convert, rather than at a profile.',
+          },
+        ],
+        pull:
+          'Every order used to require a conversation. The build removed the founder from the critical path.',
+      },
+    ],
+    proves: [
+      {
+        title: 'Social reach is not a storefront',
+        text: 'A following converts only the people who already found you. A structured, searchable store is what serves the ones who have not.',
+      },
+      {
+        title: 'Build the surface before buying the traffic',
+        text: 'SEO and Meta campaigns were pointed at a store that could take an order, which is why the spend had somewhere to convert.',
+      },
+      {
+        title: 'Take the founder off the critical path',
+        text: 'The measure of the build was not features. It was that revenue stopped being limited by how fast one person could answer a message.',
+      },
+    ],
+    closing:
+      'From an Instagram grid to a working, searchable storefront in four weeks — with organic and paid demand built on top of something that could finally take the order.',
+    accent: '#c7ff97',
+  },
+
+  /* ======================================================================
+     12 — CONNECTORA · SYSTEMS & PRODUCT BUILD · IN-HOUSE
+     ====================================================================== */
+  {
+    slug: 'connectora',
+    index: '012',
+    title: 'Two outreach tools, built as one',
+    subtitle:
+      'A complete LinkedIn outreach platform with sequencing — and the email sequencer built into the same product, so a campaign is one system rather than two subscriptions.',
+    industry: 'SaaS · Outreach Automation',
+    niche: 'Systems, APIs & product build',
+    market: 'connectora.growthmak.com',
+    year: '2026',
+    duration: 'In-house product, in use',
+    services: [
+      'Custom software development',
+      'API design & integration',
+      'Sequencing engine',
+      'AWS infrastructure',
+      'Micro-SaaS platform',
+    ],
+    summary:
+      'Connectora is a complete LinkedIn outreach tool with full sequencing, and it carries the email sequence inside the same product. Teams running multichannel outreach normally buy that as two separate subscriptions — a LinkedIn sequencer and an email sequencer — and then spend their time reconciling the two. This is the two-in-one: one prospect, one sequence, both channels.',
+    cardMetric: { value: '2-in-1', label: 'LinkedIn and email in one sequence' },
+    metrics: [
+      { value: '2', label: 'Channels, one sequence', note: 'LinkedIn and email together' },
+      { value: '1', label: 'Platform, not two subscriptions', note: 'built as a single product' },
+      { value: 'API', label: 'Integration-first architecture', note: 'endpoints, not exports' },
+      { value: 'AWS', label: 'Infrastructure', note: 'built and managed in-house' },
+    ],
+    chapters: [
+      {
+        kicker: 'The problem',
+        title: 'Multichannel outreach that lives in two products is not multichannel',
+        body: [
+          'The standard stack for outreach is a LinkedIn sequencer in one tab and an email sequencer in another. Both work. Neither knows what the other did.',
+          'That gap is where the actual cost sits: the same prospect gets sequenced twice, a reply on one channel does not stop the other, and reporting has to be reassembled by hand before anyone can tell what worked. Two subscriptions, two sets of limits, and a reconciliation job nobody was hired to do.',
+        ],
+        pull:
+          'A reply on LinkedIn should stop the email. If those live in different products, it does not — and the prospect notices before you do.',
+      },
+      {
+        kicker: 'The build',
+        title: 'One prospect, one sequence, both channels',
+        body: [
+          'Connectora was built as a single outreach platform: full LinkedIn sequencing — connection, follow-up and the steps between them — with the email sequence running inside the same campaign rather than beside it.',
+          'Because both channels sit in one product, a sequence is defined once and a prospect has one state across it. That is the whole point of the build, and it is the thing two separate tools structurally cannot do.',
+        ],
+        points: [
+          {
+            label: 'LinkedIn sequencing',
+            text: 'Complete outreach sequences with the follow-up steps handled by the platform rather than by a person with a calendar reminder.',
+          },
+          {
+            label: 'Email in the same sequence',
+            text: 'The email sequencer is part of the campaign, not a second tool holding a second copy of the list.',
+          },
+          {
+            label: 'One source of truth per prospect',
+            text: 'A single state per contact across both channels, so activity, replies and stops are consistent by construction.',
+          },
+        ],
+      },
+      {
+        kicker: 'The systems layer',
+        title: 'Integration-first, and running on infrastructure I manage',
+        body: [
+          'Under the interface this is a systems build: the APIs and endpoints that move prospects and activity between channels, the integration surface that lets it sit alongside the tools a team already pays for, and the AWS infrastructure it runs and scales on.',
+          'It is the same brief as any internal tool I build for a client — a workflow that exists, done properly in software — with the difference that this one is our own product, so the roadmap and the operational reality are both mine to own.',
+        ],
+      },
+    ],
+    proves: [
+      {
+        title: 'Consolidation is a product decision, not a feature list',
+        text: 'Making LinkedIn and email one sequence is not two tools bolted together. It required a single prospect state at the data layer, which is a decision taken at the start or not at all.',
+      },
+      {
+        title: 'End-to-end means the infrastructure too',
+        text: 'APIs, integration surface and AWS are not adjacent to this build — they are the build. The interface is the part you can see.',
+      },
+      {
+        title: 'I run what I ship',
+        text: 'This is an in-house product in active use rather than a handover. The operational cost of every architectural shortcut lands on me, which is a useful discipline to carry into client work.',
+      },
+    ],
+    closing:
+      'A complete LinkedIn outreach platform with the email sequence built in — one prospect, one sequence, two channels, on infrastructure built and managed end to end.',
     accent: '#c7ff97',
   },
 ];

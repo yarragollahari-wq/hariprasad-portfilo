@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import s from './Preloader.module.css';
 
 const LETTERS = [
-  ...'Sandeep Halemani'.split(''),
+  ...'Hari Prasad'.split(''),
   '*',
 ];
 
@@ -38,7 +38,7 @@ export default function Preloader() {
           exit={{ y: '-100%' }}
           transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
         >
-          <div className={s.mark} aria-label="Sandeep Halemani">
+          <div className={s.mark} aria-label="Hari Prasad Yarragolla">
             {LETTERS.map((ch, i) => (
               <motion.span
                 key={i}

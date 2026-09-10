@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sandeephalemani.com/sitemap.xml
+Sitemap: https://hariprasadyarragolla.com/sitemap.xml

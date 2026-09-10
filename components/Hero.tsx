@@ -11,13 +11,13 @@ const SPRING = { type: 'spring', damping: 27, stiffness: 121, mass: 0.3 } as con
 /** Base delay so the hero lands just after the preloader curtain lifts. */
 const BASE = 1.85;
 
-const WORDMARK = ['S', 'a', 'n', 'd', 'e', 'e', 'p'];
+const WORDMARK = ['H', 'a', 'r', 'i', ' ', 'P', 'r', 'a', 's', 'a', 'd'];
 
 const PILLARS = [
-  'Performance marketing',
-  'Google & Meta Ads',
-  'SEO & AEO',
-  'Tracking & attribution',
+  'Website development',
+  'Custom Shopify development',
+  'Systems, APIs & AWS',
+  'AI & voice agents',
 ];
 
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ ...SPRING, delay: BASE }}
         >
           <span className={s.dot} aria-hidden="true" />
-          <span className="micro">Performance marketing &amp; search · US · UAE · India</span>
+          <span className="micro">Full-stack &amp; AI development · US · UK · Gulf · India</span>
         </motion.div>
 
         <h1 className={s.wordmark} aria-label={site.name}>
@@ -66,7 +66,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...SPRING, delay: BASE + 0.34 }}
           >
-            Halemani
+            Yarragolla
           </motion.span>
         </h1>
 
@@ -92,10 +92,10 @@ export default function Hero() {
             transition={{ ...SPRING, delay: BASE + 0.58 }}
           >
             <p className={s.statementText}>
-              No rented growth. No reporting theatre.
+              No configured templates. No handover you cannot maintain.
               <br />
-              I take the demand engine — the ads, the tracking behind them and the search presence
-              that outlives them — and I own the result.
+              I build the storefront, the software and the systems underneath — and the AI and
+              voice agents that run on top of them.
             </p>
 
             <div className={s.actions}>
@@ -115,11 +115,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...SPRING, delay: BASE + 0.66 }}
           >
-            <span className="micro">Every step of the funnel</span>
+            <span className="micro">From data model to deploy</span>
             <p className={s.cardStat}>
-              <span className={s.cardStatValue}>$675K+</span>
+              <span className={s.cardStatValue}>1,467</span>
               <span className={s.cardStatLabel}>
-                in tracked client revenue, across four engagements under NDA
+                products in a single custom Shopify build — live in under a week
               </span>
             </p>
             <Link href="/contact" className={s.cardLink}>

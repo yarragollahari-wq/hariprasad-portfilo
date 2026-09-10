@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+
+# Source documents kept out of the deploy
+*.docx
+*.jpeg
+ChatGPT Image*

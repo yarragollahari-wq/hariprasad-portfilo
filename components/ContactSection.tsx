@@ -13,16 +13,16 @@ const POINTS = [
     text: 'You will hear back from me — not an account manager reading a script.',
   },
   {
-    title: 'A look at your numbers.',
-    text: 'I will tell you where I think the constraint actually is, before you commit to anything.',
+    title: 'A sitemap and a mockup.',
+    text: 'You see the real structure and design of what you are commissioning, before any money changes hands.',
   },
   {
     title: 'Clear next steps.',
-    text: 'A plan, an order of work, and an honest view of what it is worth — including if the answer is not yet.',
+    text: 'A scope, an order of work, and an honest view of what it is worth — including if the answer is that you do not need a rebuild.',
   },
 ];
 
-export default function ContactSection({ heading = 'Have a growth problem\nin mind?' }) {
+export default function ContactSection({ heading = 'Have something\nyou need built?' }) {
   const [sent, setSent] = useState(false);
 
   /**
@@ -44,7 +44,7 @@ export default function ContactSection({ heading = 'Have a growth problem\nin mi
       '',
       message || '(no message)',
       '',
-      '— Sent from sandeephalemani.com',
+      '— Sent from hariprasadyarragolla.com',
     ].join('\n');
 
     window.location.href =
@@ -90,7 +90,7 @@ export default function ContactSection({ heading = 'Have a growth problem\nin mi
                 <textarea
                   name="message"
                   rows={4}
-                  placeholder="What is not working? The ads, the tracking, or the search presence."
+                  placeholder="What are you building? A store, a site, an internal tool, or the systems behind them."
                 />
               </label>
 
@@ -124,8 +124,8 @@ export default function ContactSection({ heading = 'Have a growth problem\nin mi
             >
               <h2 className={`h2 ${s.railHeading}`}>Let’s talk.</h2>
               <p className={s.railLede}>
-                Tell me what is not working — the ads, the tracking behind them, or the search
-                presence that never arrived. I will tell you which one I would fix first.
+                Tell me what you are building — a storefront, a site, an internal tool, or the
+                systems and agents behind them. I will tell you what I would build first.
               </p>
             </motion.div>
 

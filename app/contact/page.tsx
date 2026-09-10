@@ -7,7 +7,7 @@ import s from './contact.module.css';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Tell me what is not working — the ads, the tracking behind them, or the search presence that never arrived. I will tell you which one I would fix first.',
+    'Tell me what you are building — a store, a site, an internal tool, or the systems and agents behind them. I will tell you what I would build first, and in what order.',
 };
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="wrap">
           <div className="eyebrow-row">
             <span className="micro">Get in touch</span>
-            <span className="micro">US · UAE · India</span>
+            <span className="micro">US · UK · Gulf · India</span>
           </div>
 
           <Reveal>
@@ -26,15 +26,15 @@ export default function ContactPage() {
 
           <Reveal delay={0.08}>
             <p className={s.lede}>
-              You will get me, not a sales team. Bring your account, your numbers, or just the
-              thing that has been stuck — and I will tell you honestly whether I am the right
-              person to fix it.
+              You will get me, not a sales team. Bring the brief, the platform you are stuck on,
+              or the process that is eating your week — and I will tell you honestly whether a
+              build is the right answer at all.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <ContactSection heading={'Have a growth problem\nin mind?'} />
+      <ContactSection heading={'Have something\nyou need built?'} />
 
       <section className="section section--tight">
         <div className="wrap">

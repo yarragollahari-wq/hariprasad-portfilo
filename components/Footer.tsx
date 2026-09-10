@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { site, capabilities } from '@/lib/site';
+import { site, capabilities, services } from '@/lib/site';
 import { caseStudies } from '@/lib/case-studies';
 import Marquee from './Marquee';
 import s from './Footer.module.css';
@@ -13,9 +13,9 @@ export default function Footer() {
       <div className={s.band}>
         <Marquee duration={38} gap={0} edgeToEdge pauseOnHover>
           <span className={s.bandItem}>
-            Performance marketing
+            Websites, software and systems
             <span className={s.bandDot} aria-hidden="true" />
-            SEO &amp; AEO
+            Built end to end
             <span className={s.bandDot} aria-hidden="true" />
           </span>
         </Marquee>
@@ -28,12 +28,14 @@ export default function Footer() {
               <span>{site.name}</span>
             </Link>
             <p className={s.blurb}>
-              An independent performance marketing and search specialist for founder-led
-              businesses. I take the demand engine — and I own the result.
+              Full-stack and AI developer. Websites, custom software, the systems and APIs
+              underneath them, and the agents that run on top.
             </p>
             <div className={s.markets}>
               <span>United States</span>
-              <span>United Arab Emirates</span>
+              <span>United Kingdom</span>
+              <span>Qatar &amp; UAE</span>
+              <span>Australia</span>
               <span>India</span>
             </div>
           </div>
@@ -45,7 +47,7 @@ export default function Footer() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/work">Work</Link>
+                <Link href="/work">Work ({caseStudies.length})</Link>
               </li>
               <li>
                 <Link href="/#services">Services</Link>
@@ -59,12 +61,12 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <nav className={s.col} aria-label="Case studies">
-            <span className="micro">Case studies</span>
+          <nav className={s.col} aria-label="Services">
+            <span className="micro">Services</span>
             <ul>
-              {caseStudies.map((c) => (
-                <li key={c.slug}>
-                  <Link href={`/work/${c.slug}`}>{c.title}</Link>
+              {services.map((sv) => (
+                <li key={sv.index}>
+                  <Link href="/#services">{sv.title}</Link>
                 </li>
               ))}
             </ul>
@@ -95,7 +97,7 @@ export default function Footer() {
             © {year} {site.name}. All rights reserved.
           </p>
           <p className={s.nda}>
-            All client work shown is published under NDA — industry and results only, no names.
+            Client work shown here was delivered at {site.studio} and is published with their names.
           </p>
         </div>
       </div>

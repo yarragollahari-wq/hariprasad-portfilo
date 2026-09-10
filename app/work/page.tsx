@@ -4,12 +4,13 @@ import Reveal from '@/components/Reveal';
 import Stats from '@/components/Stats';
 import ContactSection from '@/components/ContactSection';
 import { caseStudies } from '@/lib/case-studies';
+import { site } from '@/lib/site';
 import s from './work.module.css';
 
 export const metadata: Metadata = {
   title: 'Case studies',
   description:
-    'Four performance marketing and search engagements under NDA — e-commerce, multi-location services and solo practice. Industry, market, the work and the real numbers.',
+    'Twelve builds — custom Shopify storefronts, Next.js websites, internal software and systems. The client, the structure, the decisions and the numbers.',
 };
 
 export default function WorkIndex() {
@@ -20,7 +21,7 @@ export default function WorkIndex() {
           <div className="eyebrow-row">
             <span className="micro">Selected work</span>
             <span className="micro">
-              ({String(caseStudies.length).padStart(2, '0')}) · Under NDA
+              ({String(caseStudies.length).padStart(2, '0')}) · Delivered at {site.studio}
             </span>
           </div>
 
@@ -30,19 +31,20 @@ export default function WorkIndex() {
 
           <Reveal delay={0.08} className={s.intro}>
             <p className="lede">
-              Every engagement here is under NDA, so no client is named and no site is linked. What
-              is published is the industry, the niche, the market, the decisions I made and the
-              numbers the accounts actually produced — including the ones that are not flattering.
+              Storefronts, websites, custom software and the systems underneath them — delivered
+              at {site.studio}, and published with the client named. What is written up is the
+              structure, the decisions and the numbers each build actually produced, including the
+              projects that are still too early to claim a result.
             </p>
             <div className={s.introMeta}>
               <span>
-                <strong>4</strong> engagements
+                <strong>12</strong> builds
               </span>
               <span>
-                <strong>3</strong> markets
+                <strong>6</strong> markets
               </span>
               <span>
-                <strong>2</strong> continents
+                <strong>4</strong> continents
               </span>
             </div>
           </Reveal>
@@ -65,7 +67,7 @@ export default function WorkIndex() {
         </div>
       </section>
 
-      <ContactSection heading={'Want the same\nfor your account?'} />
+      <ContactSection heading={'Want something\nbuilt like this?'} />
     </>
   );
 }
