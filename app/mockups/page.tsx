@@ -32,9 +32,9 @@ export default function MockupsIndex() {
           <Reveal delay={0.08} className={s.intro}>
             <p className="lede">
               Full front-end builds, deployed as working previews rather than screenshots.
-              The named case studies are the client work I can publish; where a build sits
-              under NDA, the mockup is the part I can show. Every one below is live — open it,
-              resize it, click through it.
+              Client work sits under NDA, so the case studies describe the industry rather than
+              the company; these are the front ends I can show in full. Every one below is live —
+              open it, resize it, click through it.
             </p>
             <div className={s.introMeta}>
               <span>
@@ -80,8 +80,8 @@ export default function MockupsIndex() {
           <Link href="/work" className={s.cross}>
             <span className={s.crossTitle}>Case studies.</span>
             <span className={s.crossMeta}>
-              {caseStudies.length} named builds — the client, the structure, the decisions and what
-              each one produced.
+              {caseStudies.length} client builds — the industry, the structure, the decisions and
+              what each one produced.
             </span>
             <span className={s.crossArrow} aria-hidden="true">
               <svg viewBox="0 0 16 16" fill="none">

@@ -101,7 +101,7 @@ export default function Footer() {
             © {year} {site.name}. All rights reserved.
           </p>
           <p className={s.nda}>
-            Client work shown here was delivered at {site.studio} and is published with their names. Mockups are live previews, not client results.
+            Client work shown here was delivered at {site.studio}. Every client is under NDA, so case studies describe the industry and the build, never the company. Mockups are live previews, not client results.
           </p>
         </div>
       </div>

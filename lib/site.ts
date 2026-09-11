@@ -29,7 +29,7 @@ export const stats = [
     suffix: '',
     decimals: 0,
     label: 'Products in a single custom build',
-    note: 'Lighting Souq storefront, Doha',
+    note: 'Lighting retailer storefront, Doha',
   },
   {
     value: 24,
@@ -37,7 +37,7 @@ export const stats = [
     suffix: 'h',
     decimals: 0,
     label: 'Concept to a live landing page',
-    note: 'Zoophire, start to finish in a day',
+    note: 'AI hiring platform, start to finish in a day',
   },
   {
     value: 15,
@@ -188,7 +188,7 @@ export const faqs = [
   },
   {
     q: 'Custom Shopify, or a theme?',
-    a: 'Custom. A configured template produces a store that works; a custom Liquid build produces one built around how the catalogue is actually shopped. The dual-axis mega-menu, the multi-line trade quote tool and the category tiles reading live product counts in the Lighting Souq build do not ship in any theme.',
+    a: 'Custom. A configured template produces a store that works; a custom Liquid build produces one built around how the catalogue is actually shopped. The dual-axis mega-menu, the multi-line trade quote tool and the category tiles reading live product counts in the Doha lighting build do not ship in any theme.',
   },
   {
     q: 'Shopify or Next.js — how do you choose?',
@@ -200,11 +200,11 @@ export const faqs = [
   },
   {
     q: 'Whose work is this?',
-    a: 'These are engagements delivered at Growthmak, where I lead the build side. The clients are named because the work is published — the strategy, the structure and the decisions on each page are the ones I made and shipped.',
+    a: 'Engagements delivered at Growthmak, where I lead the build side. Every client is under NDA, so the case studies describe the industry, the niche and the market rather than naming the company — but the strategy, the structure and the decisions on each page are the ones I made and shipped.',
   },
   {
     q: 'What are the mockups?',
-    a: 'Full front-end builds deployed as live previews — storefronts, business sites and platforms you can open and click through. Some client work sits under NDA, so the mockup is the part I can show. They demonstrate the build; they do not claim a result, because a mockup has not produced one.',
+    a: 'Full front-end builds deployed as live previews — storefronts, business sites and platforms you can open and click through. Client work sits under NDA, so the mockups are the front ends I can show in full. They demonstrate the build; they do not claim a result, because a mockup has not produced one.',
   },
   {
     q: 'Will I be able to run it after you hand it over?',

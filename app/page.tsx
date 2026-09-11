@@ -37,8 +37,9 @@ export default function Home() {
               <span className={s.headSup}>©{new Date().getFullYear()}</span>
             </h2>
             <p className="lede">
-              Twelve builds — storefronts, sites, systems and an in-house product. Named clients,
-              real structure, and the decisions behind each one rather than a gallery of thumbnails.
+              Twelve builds — storefronts, sites, systems and an in-house product. Every client is
+              under NDA, so each one is described by industry, niche and market — with the real
+              structure and the decisions behind it rather than a gallery of thumbnails.
             </p>
           </Reveal>
 
@@ -64,9 +65,9 @@ export default function Home() {
           <Reveal className={s.sectionHead}>
             <h2 className="h1">Live mockups.</h2>
             <p className="lede">
-              Full front-end builds, deployed as working previews. The case studies above are
-              the client work I can publish; where a build sits under NDA, the mockup is the part
-              I can show. Every one of these is live — open it and click around.
+              Full front-end builds, deployed as working previews. The case studies above sit
+              under NDA, so they describe the industry rather than the client; these are the front
+              ends I can show in full. Every one is live — open it and click around.
             </p>
           </Reveal>
 

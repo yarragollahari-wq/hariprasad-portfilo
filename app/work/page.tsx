@@ -12,7 +12,7 @@ import s from './work.module.css';
 export const metadata: Metadata = {
   title: 'Case studies',
   description:
-    'Twelve builds — custom Shopify storefronts, Next.js websites, internal software and systems. The client, the structure, the decisions and the numbers.',
+    'Twelve builds — custom Shopify storefronts, Next.js websites, internal software and systems. The industry, the structure, the decisions and the numbers.',
 };
 
 export default function WorkIndex() {
@@ -34,9 +34,10 @@ export default function WorkIndex() {
           <Reveal delay={0.08} className={s.intro}>
             <p className="lede">
               Storefronts, websites, custom software and the systems underneath them — delivered
-              at {site.studio}, and published with the client named. What is written up is the
-              structure, the decisions and the numbers each build actually produced, including the
-              projects that are still too early to claim a result.
+              at {site.studio}. Every client is under NDA, so each build is described by its
+              industry, niche and market. What is written up is the structure, the decisions and
+              the numbers each build actually produced, including the projects that are still too
+              early to claim a result.
             </p>
             <div className={s.introMeta}>
               <span>

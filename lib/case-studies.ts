@@ -1,9 +1,11 @@
 /**
  * CASE STUDY CONTENT
  * ---------------------------------------------------------------------------
- * Every engagement below was delivered at Growthmak and is already published
- * publicly, so clients are named. This file is the single place that content
- * lives, so it can be audited in one pass.
+ * Every engagement below was delivered at Growthmak. Every client is under
+ * NDA, so no case study names the company, its domain, its taglines or its
+ * proprietary product names — only the industry, the niche, the market and
+ * what was built. This file is the single place that content lives, so it
+ * can be audited in one pass.
  *
  * RULE: no figure appears here that is not in the source material for that
  * engagement. Where an engagement is too early to have performance data, the
@@ -43,14 +45,14 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   /* ======================================================================
-     01 — LIGHTING SOUQ · CUSTOM SHOPIFY · DOHA, QATAR
+     01 — LIGHTING RETAILER · CUSTOM SHOPIFY · DOHA, QATAR
      ====================================================================== */
   {
-    slug: 'lighting-souq',
+    slug: 'custom-shopify-lighting-retailer',
     index: '001',
     title: 'The Shopify build',
     subtitle:
-      'A custom-built storefront for Qatar’s online lighting supermarket — 1,467 products, 40 brands, a dual-axis navigation system and a bespoke trade-quote channel.',
+      'A custom-built storefront for a Doha lighting retailer — 1,467 products, 40 brands, a dual-axis navigation system and a bespoke trade-quote channel.',
     industry: 'Lighting & Smart Home',
     niche: 'Custom Shopify development',
     market: 'Doha, Qatar',
@@ -65,7 +67,7 @@ export const caseStudies: CaseStudy[] = [
       'Data migration',
     ],
     summary:
-      'Lighting Souq sells lighting to Qatar and to more than forty countries beyond it — from a QAR 10 bulb to a full villa scheme, with its own delivery fleet and a trade business serving contractors and hospitality. I designed and built their storefront on Shopify as a fully custom theme: not a marketplace template with the colours changed, but a purpose-built front end for a technical catalogue with two very different audiences.',
+      'The client sells lighting to Qatar and to more than forty countries beyond it — from a QAR 10 bulb to a full villa scheme, with its own delivery fleet and a trade business serving contractors and hospitality. I designed and built their storefront on Shopify as a fully custom theme: not a marketplace template with the colours changed, but a purpose-built front end for a technical catalogue with two very different audiences.',
     cardMetric: { value: '1,467', label: 'Products live at launch' },
     metrics: [
       { value: '1,467', label: 'Products live', note: '1,466 in stock at launch' },
@@ -132,7 +134,7 @@ export const caseStudies: CaseStudy[] = [
         kicker: 'Bespoke build',
         title: 'A B2B channel inside a B2C storefront',
         body: [
-          'Lighting Souq supplies contractors, hotels, hospitality venues and facilities teams as well as households. Those buyers do not add forty line items to a cart one at a time — they send a list and expect a price. So I built them their own channel.',
+          'The business supplies contractors, hotels, hospitality venues and facilities teams as well as households. Those buyers do not add forty line items to a cart one at a time — they send a list and expect a price. So I built them their own channel.',
           'A dedicated request drawer lets a trade buyer search the live catalogue, add multiple products with quantities against each, and keep adding lines until the list is complete — then submit it with their name, work email, phone, company website and any notes, or continue the same conversation on WhatsApp.',
           'No standard Shopify theme ships a multi-product quote builder that reads the live catalogue. It is a bespoke Liquid and JavaScript build, reachable from the main navigation, from a dedicated bulk orders page, and from a closing banner on the homepage.',
         ],
@@ -200,10 +202,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     02 — HYDROSOX · SHOPIFY LAUNCH · UNITED KINGDOM
+     02 — WATERPROOF SOCK BRAND · SHOPIFY LAUNCH · UNITED KINGDOM
      ====================================================================== */
   {
-    slug: 'hydrosox',
+    slug: 'single-sku-shopify-launch',
     index: '002',
     title: 'One product, five ways in',
     subtitle:
@@ -222,7 +224,7 @@ export const caseStudies: CaseStudy[] = [
       'Tracking & ads setup',
     ],
     summary:
-      'HydroSox is a UK waterproof sock brand with one product, no reviews, no orders and no recognition. A WordPress site already existed but had never been launched and had never taken a sale. I built the store around the reasons people get wet feet rather than around the company — five use-case routes, each with its own page, so the brand can be found by people who have never heard of it.',
+      'The client is a UK waterproof sock brand with one product, no reviews, no orders and no recognition. A WordPress site already existed but had never been launched and had never taken a sale. I built the store around the reasons people get wet feet rather than around the company — five use-case routes, each with its own page, so the brand can be found by people who have never heard of it.',
     cardMetric: { value: '17 days', label: 'Referral call to live store' },
     metrics: [
       { value: '17 days', label: 'Referral call to live store', note: 'one week of that was the build' },
@@ -286,10 +288,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     03 — KINETIC MOTORCYCLES · E-COMMERCE BUILD · HOUSTON, USA
+     03 — MOTORCYCLE PARTS BRAND · E-COMMERCE BUILD · HOUSTON, USA
      ====================================================================== */
   {
-    slug: 'kinetic-motorcycles',
+    slug: 'motorcycle-parts-ecommerce',
     index: '003',
     title: 'From invisible to sales machine',
     subtitle:
@@ -308,7 +310,7 @@ export const caseStudies: CaseStudy[] = [
       'Retention sequences',
     ],
     summary:
-      'A premium aftermarket brand for Harley-Davidson Sportsters had real engineering credentials and an established customer base, and had been stalled around $50,000 a month. Thousands of riders searched for these products daily and saw nothing. Rather than optimising one channel, the whole revenue system was rebuilt — including migrating a hand-coded Liquid store onto Shopify and restructuring product and category pages around the terms people actually search.',
+      'A premium aftermarket parts brand built around a single Harley-Davidson platform had real engineering credentials and an established customer base, and had been stalled around $50,000 a month. Thousands of riders searched for these products daily and saw nothing. Rather than optimising one channel, the whole revenue system was rebuilt — including migrating a hand-coded Liquid store onto Shopify and restructuring product and category pages around the terms people actually search.',
     cardMetric: { value: '$628K', label: 'Revenue, Nov 2024 – Jul 2026' },
     metrics: [
       { value: '$628K', label: 'Revenue generated', note: 'November 2024 – July 2026' },
@@ -379,10 +381,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     04 — GULF ERECTION CONSTRUCTIONS · CUSTOM SOFTWARE · UAE
+     04 — CONSTRUCTION CONTRACTOR · CUSTOM SOFTWARE · UAE
      ====================================================================== */
   {
-    slug: 'gulf-erection-constructions',
+    slug: 'construction-document-management',
     index: '004',
     title: 'A document management system in 15 business days',
     subtitle:
@@ -400,7 +402,7 @@ export const caseStudies: CaseStudy[] = [
       'Cloud storage integration',
     ],
     summary:
-      'Gulf Erection Constructions was losing time to scattered documents and workflows that did not talk to each other. I built a custom document management system and deployed it in fifteen business days — designed to integrate with the practices the team already had rather than replace them, so that adoption did not require a training programme.',
+      'A UAE construction contractor was losing time to scattered documents and workflows that did not talk to each other. I built a custom document management system and deployed it in fifteen business days — designed to integrate with the practices the team already had rather than replace them, so that adoption did not require a training programme.',
     cardMetric: { value: '15 days', label: 'Brief to working system' },
     metrics: [
       { value: '15 days', label: 'Brief to working system', note: 'business days, deployed' },
@@ -469,10 +471,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     05 — URBAN PRECISION · NEXT.JS BUILD · SYDNEY, AUSTRALIA
+     05 — JOINERY FIRM · NEXT.JS BUILD · SYDNEY, AUSTRALIA
      ====================================================================== */
   {
-    slug: 'urban-precision',
+    slug: 'joinery-nextjs-website',
     index: '005',
     title: 'Craft quality, matched by the digital presence',
     subtitle:
@@ -490,7 +492,7 @@ export const caseStudies: CaseStudy[] = [
       'Integrations',
     ],
     summary:
-      'Urban Precision builds bespoke cabinetry, custom kitchens and whole-room renovations at a premium tier — on a template-bound Wix site that undermined the positioning. Four documented research phases came before any design: business goal research, ICP and persona definition, a scored competitor analysis, and an information architecture of ninety-six sections across twenty-two pages, delivered as an execution-level CSV.',
+      'The client builds bespoke cabinetry, custom kitchens and whole-room renovations at a premium tier — on a template-bound Wix site that undermined the positioning. Four documented research phases came before any design: business goal research, ICP and persona definition, a scored competitor analysis, and an information architecture of ninety-six sections across twenty-two pages, delivered as an execution-level CSV.',
     cardMetric: { value: '96 sections', label: 'Mapped across 22 pages before build' },
     metrics: [
       { value: '96', label: 'Sections mapped', note: 'across 22 pages, before design' },
@@ -568,10 +570,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     06 — DECODING WISDOM · WEBSITE & IA · MULTI-MARKET
+     06 — PODCAST · WEBSITE & IA · MULTI-MARKET
      ====================================================================== */
   {
-    slug: 'decoding-wisdom',
+    slug: 'podcast-website',
     index: '006',
     title: 'The owned home for a rented audience',
     subtitle:
@@ -659,10 +661,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     07 — AMERICAN PRECAST WALLS · WEBSITE & IA · UNITED STATES
+     07 — PRECAST CONCRETE MANUFACTURER · WEBSITE & IA · UNITED STATES
      ====================================================================== */
   {
-    slug: 'american-precast-walls',
+    slug: 'precast-manufacturer-website',
     index: '007',
     title: 'Precision manufacturing, given a precise structure',
     subtitle:
@@ -680,7 +682,7 @@ export const caseStudies: CaseStudy[] = [
       'Technical content structuring',
     ],
     summary:
-      'American Precast Walls manufactures precast concrete wall and fence systems across five project types. The difficulty was a complex catalogue serving multiple stakeholder groups — architects, municipal engineers and HOA boards — buying identical products for different reasons and needing technical drawings before committing. That complexity is what usually turns a manufacturer site into a brochure nobody can navigate.',
+      'The client manufactures precast concrete wall and fence systems across five project types. The difficulty was a complex catalogue serving multiple stakeholder groups — architects, municipal engineers and HOA boards — buying identical products for different reasons and needing technical drawings before committing. That complexity is what usually turns a manufacturer site into a brochure nobody can navigate.',
     cardMetric: { value: '6 paths', label: 'One per stakeholder group' },
     metrics: [
       { value: '2', label: 'Product systems', note: 'each with distinct architecture' },
@@ -701,13 +703,13 @@ export const caseStudies: CaseStudy[] = [
         kicker: 'The structure',
         title: 'Two product systems, two parallel entry routes',
         body: [
-          'The site was restructured around the two product systems rather than the company narrative. Permacrete wall systems and Duracrete fences each received their own architecture, with a consistent finish taxonomy — StoneCast, Woodcast, BrickCast and BlockCast — so options can be compared within a system rather than across a price list.',
+          'The site was restructured around the two product systems rather than the company narrative. The wall system and the fence system each received their own architecture, with a consistent four-finish taxonomy — stone, wood, brick and block textures — so options can be compared within a system rather than across a price list.',
           'Two parallel entry routes then run over the top: five application sectors for project-based buyers who think in terms of what they are building, and six stakeholder paths for architects, engineers, land developers, HOAs, public works and general contractors who think in terms of what they need to approve.',
         ],
         points: [
           {
             label: 'System-first architecture',
-            text: 'Permacrete and Duracrete structured separately, so each reads as a product line rather than a catalogue section.',
+            text: 'The wall system and the fence system structured separately, so each reads as a product line rather than a catalogue section.',
           },
           {
             label: 'Consistent finish taxonomy',
@@ -750,10 +752,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     08 — ADin · NEXT.JS & CMS · NEW YORK, USA
+     08 — B2B COMMUNICATIONS AGENCY · NEXT.JS & CMS · NEW YORK, USA
      ====================================================================== */
   {
-    slug: 'adin',
+    slug: 'communications-agency-nextjs-website',
     index: '008',
     title: 'A premium digital home for decades of work',
     subtitle:
@@ -771,7 +773,7 @@ export const caseStudies: CaseStudy[] = [
       'UI/UX & CRO',
     ],
     summary:
-      'ADin works in healthcare, nutrition and life sciences and had decades of client work behind it. The legacy site communicated none of that with clarity, hierarchy or visual confidence: an outdated structure obscured the capabilities, case study storytelling was weak, content and imagery were inconsistent, and the experience did not read as premium on any device.',
+      'The client is a B2B marketing and communications agency working in healthcare, nutrition and life sciences, and and had decades of client work behind it. The legacy site communicated none of that with clarity, hierarchy or visual confidence: an outdated structure obscured the capabilities, case study storytelling was weak, content and imagery were inconsistent, and the experience did not read as premium on any device.',
     cardMetric: { value: 'Next.js', label: 'Rebuilt on a structured CMS' },
     metrics: [
       { value: 'Next.js', label: 'Custom build', note: 'replacing a legacy site' },
@@ -841,10 +843,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     09 — TECHNOBRIQ · B2B WEBSITE · DOHA, QATAR
+     09 — DISPLAY TECHNOLOGY SUPPLIER · B2B WEBSITE · DOHA, QATAR
      ====================================================================== */
   {
-    slug: 'technobriq',
+    slug: 'display-technology-b2b-website',
     index: '009',
     title: 'Professional display solutions, made credible',
     subtitle:
@@ -861,11 +863,11 @@ export const caseStudies: CaseStudy[] = [
       'WhatsApp routing',
     ],
     summary:
-      'Technobriq supplies, installs and supports LED video walls, digital signage and self-service kiosks across Qatar. The site had to establish credibility with enterprise and government purchasers — audiences that buy on proof and process — and then move qualified enquiries efficiently to a human.',
+      'The client supplies, installs and supports LED video walls, digital signage and self-service kiosks across Qatar. The site had to establish credibility with enterprise and government purchasers — audiences that buy on proof and process — and then move qualified enquiries efficiently to a human.',
     cardMetric: { value: '4.9★', label: 'Google rating, surfaced as proof' },
     metrics: [
       { value: '4.9★', label: 'Google rating', note: 'surfaced as on-page proof' },
-      { value: '4', label: 'Authorised partners', note: 'Samsung, Unilumin, Leyard, ELX' },
+      { value: '4', label: 'Authorised partners', note: 'global display manufacturers' },
       { value: '2', label: 'Primary actions', note: 'WhatsApp or a detailed quote' },
       { value: 'B2B', label: 'Enterprise & government', note: 'the buyers the site is built for' },
     ],
@@ -882,7 +884,7 @@ export const caseStudies: CaseStudy[] = [
         kicker: 'The build',
         title: 'Evidence first, then two clear ways to start a conversation',
         body: [
-          'The design is dark and engineering-focused, built around actual installations rather than stock imagery, with authorised-partner logos — Samsung, Unilumin, Leyard and ELX — carrying the credential the buyer is checking for.',
+          'The design is dark and engineering-focused, built around actual installations rather than stock imagery, with the logos of four authorised manufacturer partnerships carrying the credential the buyer is checking for.',
           'High-intent visitors are then routed to two primary actions and no more: WhatsApp for the fast answer, or a detailed quote request for the procurement path. Supporting evidence reinforces each stage rather than sitting on a separate credentials page.',
         ],
         points: [
@@ -923,17 +925,17 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     10 — ZOOPHIRE · LANDING PAGE · SAAS PRODUCT
+     10 — AI HIRING PLATFORM · LANDING PAGE · SAAS PRODUCT
      ====================================================================== */
   {
-    slug: 'zoophire',
+    slug: 'ai-hiring-landing-page',
     index: '010',
     title: 'A full platform landing page, live in 24 hours',
     subtitle:
       'An AI hiring platform taken from concept to a live, converting landing page in a single day — because there was nothing left to discover.',
     industry: 'SaaS · AI Hiring',
     niche: 'Landing page development',
-    market: 'zoophire.io',
+    market: 'SaaS · global',
     year: '2026',
     duration: '24 hours, concept to live',
     services: [
@@ -943,7 +945,7 @@ export const caseStudies: CaseStudy[] = [
       'UI/UX',
     ],
     summary:
-      'Zoophire is an AI-powered end-to-end hiring platform — job posting, ATS screening, candidate emails, interview scheduling and offer agreements. The brief was to design and launch its landing page from concept to live in a single day. It worked because we had built the product itself, which removed the discovery phase entirely.',
+      'The product is an AI-powered end-to-end hiring platform — job posting, ATS screening, candidate emails, interview scheduling and offer agreements. The brief was to design and launch its landing page from concept to live in a single day. It worked because we had built the product itself, which removed the discovery phase entirely.',
     cardMetric: { value: '24 hours', label: 'Concept to live' },
     metrics: [
       { value: '24 hrs', label: 'Concept to launch', note: 'design, copy and build' },
@@ -999,10 +1001,10 @@ export const caseStudies: CaseStudy[] = [
   },
 
   /* ======================================================================
-     11 — SPARROWTECK · E-COMMERCE BUILD · INDIA
+     11 — SPROCKET MANUFACTURER · E-COMMERCE BUILD · INDIA
      ====================================================================== */
   {
-    slug: 'sparrowteck',
+    slug: 'sprocket-manufacturer-ecommerce',
     index: '011',
     title: 'From Instagram-only to a working storefront',
     subtitle:
@@ -1018,7 +1020,7 @@ export const caseStudies: CaseStudy[] = [
       'Meta Ads',
     ],
     summary:
-      'Sparrowteck manufactures custom sprockets and was running its entire business through Instagram. Every order was a conversation, nothing was searchable, and there was no surface for anyone who was not already following. A fully functional, scalable online store replaced that model in four weeks, with SEO and paid campaigns built around it.',
+      'The client manufactures custom sprockets and was running its entire business through Instagram. Every order was a conversation, nothing was searchable, and there was no surface for anyone who was not already following. A fully functional, scalable online store replaced that model in four weeks, with SEO and paid campaigns built around it.',
     cardMetric: { value: '4 weeks', label: 'To a live storefront' },
     metrics: [
       { value: '4 weeks', label: 'To develop the store', note: 'from Instagram-only to live' },
