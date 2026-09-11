@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { site, capabilities, services } from '@/lib/site';
 import { caseStudies } from '@/lib/case-studies';
+import { mockups } from '@/lib/mockups';
 import Marquee from './Marquee';
 import s from './Footer.module.css';
 
@@ -50,6 +51,9 @@ export default function Footer() {
                 <Link href="/work">Work ({caseStudies.length})</Link>
               </li>
               <li>
+                <Link href="/mockups">Mockups ({mockups.length})</Link>
+              </li>
+              <li>
                 <Link href="/#services">Services</Link>
               </li>
               <li>
@@ -97,7 +101,7 @@ export default function Footer() {
             © {year} {site.name}. All rights reserved.
           </p>
           <p className={s.nda}>
-            Client work shown here was delivered at {site.studio} and is published with their names.
+            Client work shown here was delivered at {site.studio} and is published with their names. Mockups are live previews, not client results.
           </p>
         </div>
       </div>

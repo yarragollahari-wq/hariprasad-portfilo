@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Preloader from '@/components/Preloader';
 import Hero from '@/components/Hero';
 import WorkList from '@/components/WorkList';
+import MockupGrid from '@/components/MockupGrid';
 import Stats from '@/components/Stats';
 import ServicesAccordion from '@/components/ServicesAccordion';
 import Process from '@/components/Process';
@@ -12,6 +13,7 @@ import ContactSection from '@/components/ContactSection';
 import Reveal from '@/components/Reveal';
 import Marquee from '@/components/Marquee';
 import { caseStudies } from '@/lib/case-studies';
+import { mockups, featuredMockups } from '@/lib/mockups';
 import { site } from '@/lib/site';
 import s from './page.module.css';
 
@@ -45,6 +47,34 @@ export default function Home() {
           <Reveal delay={0.1} className={s.workFoot}>
             <Link href="/work" className="btn btn--ghost">
               All case studies
+              <Arrow />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= WEB DEVELOPMENT · LIVE MOCKUPS ================= */}
+      <section className={`section ${s.mockups}`} id="mockups">
+        <div className="wrap">
+          <div className="eyebrow-row">
+            <span className="micro">Web development</span>
+            <span className="micro">({String(mockups.length).padStart(2, '0')}) · Live mockups</span>
+          </div>
+
+          <Reveal className={s.sectionHead}>
+            <h2 className="h1">Live mockups.</h2>
+            <p className="lede">
+              Full front-end builds, deployed as working previews. The case studies above are
+              the client work I can publish; where a build sits under NDA, the mockup is the part
+              I can show. Every one of these is live — open it and click around.
+            </p>
+          </Reveal>
+
+          <MockupGrid items={featuredMockups} />
+
+          <Reveal delay={0.1} className={s.workFoot}>
+            <Link href="/mockups" className="btn btn--ghost">
+              All {mockups.length} mockups
               <Arrow />
             </Link>
           </Reveal>

@@ -1,5 +1,6 @@
 .head {
   padding-top: clamp(120px, 15vw, 190px);
+  padding-bottom: clamp(24px, 3vw, 40px);
 }
 
 .intro {
@@ -36,19 +37,19 @@
   color: var(--accent);
 }
 
-@media (min-width: 860px) {
-  .intro {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
-    gap: 48px;
-    align-items: center;
-  }
-
-  .introMeta {
-    justify-content: flex-end;
-  }
+.groupHead {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: clamp(28px, 3.4vw, 48px);
 }
 
-/* ---- cross-link to the live mockups ---- */
+.groupHead :global(.lede) {
+  max-width: 52ch;
+}
+
+/* ---- cross-link to the case studies ---- */
 
 .crossBand {
   background: var(--bg-2);
@@ -116,3 +117,19 @@
   transform: rotate(45deg);
 }
 
+@media (min-width: 860px) {
+  .intro {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .introMeta {
+    justify-content: flex-end;
+  }
+
+  .groupHead {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+  }
+}

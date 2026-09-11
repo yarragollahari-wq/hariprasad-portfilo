@@ -203,6 +203,10 @@ export const faqs = [
     a: 'These are engagements delivered at Growthmak, where I lead the build side. The clients are named because the work is published — the strategy, the structure and the decisions on each page are the ones I made and shipped.',
   },
   {
+    q: 'What are the mockups?',
+    a: 'Full front-end builds deployed as live previews — storefronts, business sites and platforms you can open and click through. Some client work sits under NDA, so the mockup is the part I can show. They demonstrate the build; they do not claim a result, because a mockup has not produced one.',
+  },
+  {
     q: 'Will I be able to run it after you hand it over?',
     a: 'That is a design constraint, not an afterthought. Homepages are built as reorderable sections, content models are built as CMS templates a single founder can operate, and internal tools are scoped so adoption does not need a training programme. If it can only be maintained by me, I have built it wrong.',
   },

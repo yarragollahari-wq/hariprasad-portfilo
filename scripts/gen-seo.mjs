@@ -21,6 +21,7 @@ const today = new Date().toISOString().slice(0, 10);
 const pages = [
   { loc: url, priority: '1.0', freq: 'monthly' },
   { loc: `${url}/work`, priority: '0.9', freq: 'monthly' },
+  { loc: `${url}/mockups`, priority: '0.8', freq: 'monthly' },
   { loc: `${url}/contact`, priority: '0.7', freq: 'yearly' },
   ...slugs.map((s) => ({ loc: `${url}/work/${s}`, priority: '0.8', freq: 'yearly' })),
 ];

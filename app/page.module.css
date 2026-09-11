@@ -147,3 +147,10 @@
     grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.6fr);
   }
 }
+
+/* ---- live mockups ---- */
+
+.mockups {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+}

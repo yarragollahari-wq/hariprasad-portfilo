@@ -6,12 +6,14 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
 import { site } from '@/lib/site';
 import { caseStudies } from '@/lib/case-studies';
+import { mockups } from '@/lib/mockups';
 import s from './Nav.module.css';
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work', count: caseStudies.length },
+  { href: '/mockups', label: 'Mockups', count: mockups.length },
   { href: '/#about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];

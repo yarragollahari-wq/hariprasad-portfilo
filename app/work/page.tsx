@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import WorkList from '@/components/WorkList';
 import Reveal from '@/components/Reveal';
 import Stats from '@/components/Stats';
 import ContactSection from '@/components/ContactSection';
 import { caseStudies } from '@/lib/case-studies';
+import { mockups } from '@/lib/mockups';
 import { site } from '@/lib/site';
 import s from './work.module.css';
 
@@ -64,6 +66,30 @@ export default function WorkIndex() {
             <span className="micro">Live dashboard figures</span>
           </div>
           <Stats />
+        </div>
+      </section>
+
+      <section className={`section section--tight ${s.crossBand}`}>
+        <div className="wrap">
+          <span className="micro">Under NDA? There are still things to see</span>
+          <Link href="/mockups" className={s.cross}>
+            <span className={s.crossTitle}>Live mockups.</span>
+            <span className={s.crossMeta}>
+              {mockups.length} full front-end builds deployed as working previews — storefronts,
+              business sites and platforms you can open and click through.
+            </span>
+            <span className={s.crossArrow} aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3.5 12.5L12.5 3.5M12.5 3.5H5.5M12.5 3.5V10.5"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+          </Link>
         </div>
       </section>
 
